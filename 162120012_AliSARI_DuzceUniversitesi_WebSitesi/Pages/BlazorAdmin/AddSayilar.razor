@@ -1,0 +1,90 @@
+﻿@page "/blazoradmin/AddSayilar"
+
+@using _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models;
+@using Microsoft.AspNetCore.Components.Web
+@inject SayilarService objSayilarService
+@inject NavigationManager NavigationManager
+
+<h2>Sayılar Ekle</h2>
+<hr />
+
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="FakulteSayisi" class="control-label">Fakulte Sayısı</label>
+                <input for="FakulteSayisi" class="form-control" @bind="@objsayilar.FakulteSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="EnstituSayisi" class="control-label">Enstitu Sayısı</label>
+                <input for="EnstituSayisi" class="form-control" @bind="@objsayilar.EnstituSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="YuksekOkulSayisi" class="control-label">Yüksek Okul  Sayısı</label>
+                <input for="YuksekOkulSayisi" class="form-control" @bind="@objsayilar.YuksekOkulSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="MeslekYuksekOkulSayisi" class="control-label">Meslek Yüksek Okul Sayısı</label>
+                <input for="MeslekYuksekOkulSayisi" class="form-control" @bind="@objsayilar.MeslekYuksekOkulSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="LisansProgramiSayisi" class="control-label">Lisans Programı Sayısı</label>
+                <input for="LisansProgramiSayisi" class="form-control" @bind="@objsayilar.LisansProgramiSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="LisansUstuProgramSayisi" class="control-label">Lisans Üstü Program Sayısı</label>
+                <input for="LisansUstuProgramSayisi" class="form-control" @bind="@objsayilar.LisansUstuProgramSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="UygulamaArastirmaMerkeziSayisi" class="control-label">Uygulama Araştırma Merkezi Sayısı</label>
+                <input for="UygulamaArastirmaMerkeziSayisi" class="form-control" @bind="@objsayilar.UygulamaArastirmaMerkeziSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="KordinatorlukSayisi" class="control-label">Kordinatorlük Sayısı</label>
+                <input for="KordinatorlukSayisi" class="form-control" @bind="@objsayilar.KordinatorlukSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="TubitakProjeSayisi" class="control-label">Tübitak Proje Sayısı</label>
+                <input for="TubitakProjeSayisi" class="form-control" @bind="@objsayilar.TubitakProjeSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="BAPProjesiSayisi" class="control-label">BAP Projesi  Sayısı</label>
+                <input for="BAPProjesiSayisi" class="form-control" @bind="@objsayilar.BAPProjesiSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="SponsorluProjeSayisi" class="control-label">Sponsorlu Proje Sayısı</label>
+                <input for="SponsorluProjeSayisi" class="form-control" @bind="@objsayilar.SponsorluProjeSayisi" />
+            </div>
+            <div class="form-group">
+                <label for="PatentSayisi" class="control-label">Patent Sayısı</label>
+                <input for="PatentSayisi" class="form-control" @bind="@objsayilar.PatentSayisi" />
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" @onclick="@CreateSayilar" value="Ekle" />
+                <input type="button" class="btn btn-primary" @onclick="@Cancel" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+@code {
+    Sayilar objsayilar = new Sayilar();
+    protected void CreateSayilar()
+    {
+        objSayilarService.Create(objsayilar);
+        NavigationManager.NavigateTo("/blazoradmin/Sayilarr");
+    }
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("/blazoradmin/Sayilarr");
+    }
+}

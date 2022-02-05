@@ -1,0 +1,55 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim>
+
+@{
+
+    var fakulte = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Fakulte)ViewBag.Fakulteler;
+    var yonetimler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim)ViewBag.Yonetimler;
+}
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="~/css/FakulteYonetimKisiler.css?Version=1" />
+</head>
+<body>
+    <h2 id="genelbilgilerbaslik1">Yönetim</h2>
+    @*@yonetimler.*@
+    <div class="row">
+
+        @{
+            foreach (var item in Model)
+            {
+                if ((item.YonetimKategori.Gorevi.IndexOf("Dekan", 0) >= 1) ||
+                                (item.YonetimKategori.Gorevi.IndexOf("Dekan Yar", 0) >= 1) ||
+                                (item.YonetimKategori.Gorevi.IndexOf("Sekreter", 0) >= 1))
+                {
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card mb-4" id="rektoryrdcard">
+                            <a href="@item.FotografUrl" target="_blank">
+                                <img class="card-img-top " width="100%" src="@item.FotografUrl" alt="Card image cap" height="300">
+                            </a>
+
+                            <div class="card-body">
+                                <p style="text-align:center">
+                                    <a asp-action="YonetimdekiKisilerDetay" asp-route-id="@item.ID" asp-route-fakulteid="@fakulte.ID" class="rektoryrdtitle">@item.Unvan @item.Ad @item.Soyad</a>
+                                </p>
+                                <p>
+                                    @Html.DisplayFor(modelItem => item.YonetimKategori.Gorevi)
+                                </p>
+                                <p>
+                                    @item.Aciklama1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+
+
+    <br /><br /><br />
+</body>
+</html>
+

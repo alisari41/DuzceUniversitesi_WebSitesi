@@ -1,0 +1,109 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Kullanici>
+
+@{
+    ViewData["Title"] = "Üyeler";
+}
+
+<br />
+<h2>Üyeler</h2>
+<br />
+
+
+<div class="table-responsive">
+    <table class="table table-hover table-sm table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Adı
+                </th>
+                <th>
+                    Soyadı
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    Telefon Numarası
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sifre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TCKimlikNumarasi)
+                </th>
+                <th>Güncelle</th>
+                <th>Detay</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sifre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TCKimlikNumarasi)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-default fas fa-edit   guncellemebuton" style="border: 2px solid green;"> Güncelle</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ID" class="btn  btn-default fas fa-info detaylamabuton" style="border: 2px solid #39ded8;"> Detay</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-default fas fa-trash-alt silmebuton" style="border: 2px solid red;"> Sil</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<style>
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: #00ff21;
+    }
+
+        .guncellemebuton:hover {
+            background-color: #851111;
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        color: #39ded8;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #1e4e4c;
+            color: white;
+        }
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+</style>

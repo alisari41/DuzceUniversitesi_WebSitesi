@@ -1,0 +1,77 @@
+﻿@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim
+
+@{
+    ViewData["Title"] = "Rektör Yardımcıları Detay";
+}
+<html>
+<head>
+
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    @Model.Ad @Model.Soyad
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid" id="bodykismi">
+        <h2 id="baslik1">@Model.Ad @Model.Soyad</h2>
+        <p style="text-align:center;font-weight:600;">
+            <a href="@Model.FotografUrl" target="_blank">
+                <img src="@Model.FotografUrl" id="rektorresim">
+            </a> 
+            <br />
+            @Model.Unvan @Model.Ad @Model.Soyad Kimdir?
+        </p>
+        <p> @Model.Aciklama1</p>
+        <p> @Model.Aciklama2</p>
+        <p> @Model.Aciklama3</p>
+        <p> @Model.Aciklama4</p>
+        @{
+            if ((Model.Yayinlar1 == null) && (Model.Yayinlar2 == null) && (Model.Yayinlar3 == null) && (Model.Yayinlar4 == null)
+                && (Model.Yayinlar5 == null) && (Model.Yayinlar6 == null) && (Model.Yayinlar7 == null) && (Model.Yayinlar8 == null)
+                && (Model.Yayinlar9 == null) && (Model.Yayinlar10 == null) && (Model.Yayinlar11 == null) && (Model.Yayinlar12 == null))
+            { /* Yayınların hepsi boş ise birşey yapma */
+
+            }
+            else
+            { /* Yayınlardan herhangi biri dolu ise başlık at */
+                <h4 id="#rektoryrdyayinlari">Yayınları: </h4>
+            }
+        }
+
+        <p> @Model.Yayinlar1   </p>
+        <p> @Model.Yayinlar2   </p>
+        <p> @Model.Yayinlar3   </p>
+        <p> @Model.Yayinlar4   </p>
+        <p> @Model.Yayinlar5   </p>
+        <p> @Model.Yayinlar6   </p>
+        <p> @Model.Yayinlar7   </p>
+        <p> @Model.Yayinlar8   </p>
+        <p> @Model.Yayinlar9   </p>
+        <p> @Model.Yayinlar10   </p>
+        <p> @Model.Yayinlar11   </p>
+        <p> @Model.Yayinlar12   </p>
+        @*  <ul style="list-style-type:none; margin-top:0">*@
+        @*</ul>*@
+
+        <p> @Model.Aciklama5</p>
+
+    </div>
+
+
+</body>
+</html>

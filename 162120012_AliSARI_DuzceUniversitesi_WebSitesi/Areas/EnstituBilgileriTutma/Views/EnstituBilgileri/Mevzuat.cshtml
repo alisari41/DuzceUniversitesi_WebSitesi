@@ -1,0 +1,29 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@* Kendi oluşturdup-ğum TagHelper *@
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Mevzuat>
+@{
+    var enstitu = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Enstitu)ViewBag.Enstituler;
+    var bolumler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Bolum)ViewBag.Bolumler;
+}
+<html>
+<head>
+
+</head>
+<body>
+
+    <h2 id="genelbilgilerbaslik1">
+        Mevzuat
+    </h2>
+
+    @foreach (var item in Model)
+    {
+        <p>
+            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama </a>
+        </p>
+
+    }
+
+
+
+</body>
+</html>

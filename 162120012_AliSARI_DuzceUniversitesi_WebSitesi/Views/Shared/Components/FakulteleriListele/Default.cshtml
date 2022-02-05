@@ -1,0 +1,9 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Fakulte>
+
+@{
+    foreach (var item in Model)
+    {
+        <li class="item"><a class="dropdown-item" href="/Fakulteler/@item.FakulteAdi.Replace(" ","-")/@item.ID">@item.FakulteAdi</a></li>
+        // Burası navbarda link oluşturmak için yönlendirme
+    }
+}

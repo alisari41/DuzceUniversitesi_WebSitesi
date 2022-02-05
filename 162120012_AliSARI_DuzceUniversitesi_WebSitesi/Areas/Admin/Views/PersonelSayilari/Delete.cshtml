@@ -1,0 +1,46 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.PersonelSayilari
+
+@{
+    ViewData["Title"] = "Personel Sayısı Silme";
+}
+<h3 style="font-weight:bold">Bu personel sayılarını silmek istediğinizden emin misiniz ?</h3>
+
+<div style="margin-left:25px">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Birimi
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.PersonelSayilariKategori.Kategori)
+        </dd>
+        <dt class="col-sm-3">
+            Ünvan
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Unvan) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            Hizmet Yeri
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.HizmetYeri) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            Sayı
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Sayi)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" asp-controller="PersonelSayilari">
+        <div class="form-actions no-color">
+            <a asp-action="Index" asp-controller="PersonelSayilari" class="btn btn-default fa fa-backward detaylamabuton col-sm-2" style="margin-left: 2px; border: 2px solid green;"> Geri Dön</a>
+            <input type="hidden" asp-for="ID" />
+            <button type="submit" class="btn btn-default fas fa-trash-alt silmebuton col-sm-2" style="margin-left:98px;border: 2px solid red;">&nbsp; Sil</button>
+        </div>
+    </form>
+</div>
+

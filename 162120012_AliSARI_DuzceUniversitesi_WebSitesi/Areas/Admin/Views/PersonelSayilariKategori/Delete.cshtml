@@ -1,0 +1,80 @@
+﻿@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.PersonelSayilariKategori
+
+@{
+    ViewData["Title"] = "Personel Sayıları için Kategori Sil";
+}
+
+<h3 style="font-weight:bold">Bu kategoriyi silmek istediğinizden emin misiniz ?</h3>
+
+<div style="margin-left:25px">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Kategori)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Kategori)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            @Html.ActionLink(" Listeye Geri Dön", "Index", new { }, new { @class = "btn btn-default fa fa-backward detaylamabuton col-sm-2", style = "margin-left:2px;border: 2px solid green;" })
+            <button type="submit" class="btn btn-default fas fa-trash-alt silmebuton col-sm-2" style="margin-left:98px;border: 2px solid red;"> Sil</button>
+        </div>
+    }
+</div>
+<div class="row"></div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<style>
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: red
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: green
+    }
+
+        .detaylamabuton:hover {
+            background-color: #088919;
+            color: white;
+        }
+</style>

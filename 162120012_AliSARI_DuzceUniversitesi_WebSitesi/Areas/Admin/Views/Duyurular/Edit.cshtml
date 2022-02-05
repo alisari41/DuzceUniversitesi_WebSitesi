@@ -1,0 +1,147 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Duyurular
+
+@{
+    ViewData["Title"] = "Duyuru Güncelle";
+}
+<h2>Personel Bilgilerini Güncelle</h2>
+<hr />
+
+<form asp-action="Edit" asp-controller="Personel" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Duyuru Kategori</label>
+        <div class="col-md-9">
+            <select asp-for="DuyuruKategori" asp-validation-for="DuyuruKategori" class="form-control text-info">
+                <option value="">--Seçiniz--</option>
+                <option value="Duyuru">Duyuru</option>
+                <option value="Etkinlik">Etkinlik</option>
+                <option value="Haber">Haber</option>
+                <option value="Yayın">Yayın</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Baslik</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Baslik" class="form-control text-info" />
+            <span asp-validation-for="Baslik" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Icerik</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Icerik" class="form-control text-info" />
+            <span asp-validation-for="Icerik" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Tarih</label>
+        <div class="col-md-9">
+            <input type="date" asp-for="Tarih" class="form-control event-date" />
+            <span asp-validation-for="Tarih" class="event-date "></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">AktifMi</label>
+        <div class="col-md-9">
+            <input type="checkbox" asp-for="AktifMi" class="form-control text-info" />
+            <span asp-validation-for="AktifMi" class="text-info "></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama1</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama1" class="form-control text-info" />
+            <span asp-validation-for="Aciklama1" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama2</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama2" class="form-control text-info" />
+            <span asp-validation-for="Aciklama2" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama3</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama3" class="form-control text-info" />
+            <span asp-validation-for="Aciklama3" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama4</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama4" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama5</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama5" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">ResimUrl1</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="ResimUrl1" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">ResimUrl2</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="ResimUrl2" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">ResimUrl3</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="ResimUrl3" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">ResimUrl4</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="ResimUrl4" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">ResimUrl5</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="ResimUrl5" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">ResimUrl6</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="ResimUrl6" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">ResimUrl7</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="ResimUrl7" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">ResimUrl8</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="ResimUrl8" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+                    <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z" />
+                </svg>&nbsp;
+                Duyuru Güncelle
+            </button>
+        </div>
+    </div>
+</form>
+<a asp-action="Index" asp-controller="Personel" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

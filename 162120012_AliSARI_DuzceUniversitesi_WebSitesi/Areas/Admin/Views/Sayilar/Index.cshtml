@@ -1,0 +1,146 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Sayilar>
+
+@{
+    ViewData["Title"] = "Sayılar";
+}
+
+<br />
+<h2>Sayılar</h2>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-danger bi bi-megaphone-fill "> Sayıları Ekle</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-hover table-sm table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FakulteSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EnstituSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.YuksekOkulSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MeslekYuksekOkulSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LisansProgramiSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LisansUstuProgramSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UygulamaArastirmaMerkeziSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.KordinatorlukSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TubitakProjeSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BAPProjesiSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SponsorluProjeSayisi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PatentSayisi)
+                </th>
+                <th>Güncelle</th>
+                <th>Detay</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FakulteSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnstituSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YuksekOkulSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MeslekYuksekOkulSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LisansProgramiSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LisansUstuProgramSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UygulamaArastirmaMerkeziSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KordinatorlukSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TubitakProjeSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BAPProjesiSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SponsorluProjeSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatentSayisi)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-default fas fa-edit   guncellemebuton" style="border: 2px solid green;"> Güncelle</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ID" class="btn  btn-default fas fa-info detaylamabuton" style="border: 2px solid #39ded8;"> Detay</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-default fas fa-trash-alt silmebuton" style="border: 2px solid red;"> Sil</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+<style>
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: #00ff21;
+    }
+
+        .guncellemebuton:hover {
+            background-color: #851111;
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        color: #39ded8;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #1e4e4c;
+            color: white;
+        }
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+</style>

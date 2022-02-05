@@ -1,0 +1,247 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.ButceBilgileri>
+
+@{
+    ViewData["Title"] = "Bütçe Bilgileri";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Bütçe Bilgileri
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid" id="bodykismi">
+        <h2 id="baslik1">Bütçe Bilgileri</h2>
+        <br /><br />
+
+        <p style="font-weight:600;">
+            2021
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2021")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+
+        <p style="font-weight:600;">
+            2020
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2020")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2019
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2019")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2018
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2018")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2017
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2017")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2016
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2016")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2015
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2015")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2014
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2014")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2013
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2013")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2012
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2012")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2011
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2011")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+
+        <br />
+        <p style="font-weight:600;">
+            2010
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.ButceBilgileriKategori.YilKategori == "2010")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br /><br />
+
+
+    </div>
+
+
+</body>
+</html>

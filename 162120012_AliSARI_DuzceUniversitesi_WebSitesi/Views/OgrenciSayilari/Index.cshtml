@@ -1,0 +1,134 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.OgrenciSayilari>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Öğrenci Sayıları
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid" id="bodykismi">
+        <h2 id="baslik1">Öğrenci Sayıları</h2>
+
+        <div class="table-responsive">
+            <table class="table table-hover table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Öğrenim Düzeyi
+                        </th>
+                        <th>
+                            Akademik Birim
+                        </th>
+                        <th>
+                            Kadın Sayısı
+                        </th>
+                        <th>
+                            Erkek Sayısı
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Toplam)
+                        </th>
+                    </tr>
+                </thead>
+
+                @{
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.OgrenimDuzeyi == "Ön Lisans")
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OgrenimDuzeyi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AkademikBirim)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.KadinSayisi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ErkekSayisi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Toplam)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        @foreach (var item in Model)
+                        {
+                            if (item.OgrenimDuzeyi == "Lisans")
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OgrenimDuzeyi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AkademikBirim)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.KadinSayisi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ErkekSayisi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Toplam)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        @foreach (var item in Model)
+                        {
+                            if (item.OgrenimDuzeyi == "Lisansüstü")
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OgrenimDuzeyi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AkademikBirim)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.KadinSayisi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ErkekSayisi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Toplam)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                }
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>

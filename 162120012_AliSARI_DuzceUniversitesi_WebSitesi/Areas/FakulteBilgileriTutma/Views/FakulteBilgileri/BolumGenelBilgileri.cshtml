@@ -1,0 +1,90 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, 162120012_AliSARI_DuzceUniversitesi_WebSitesi
+@* Kendi oluşturdup-ğum TagHelper *@
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.BolumGenelBilgileri>
+@{
+    var fakulte = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Fakulte)ViewBag.Fakulteler;
+    var bolumler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Bolum)ViewBag.Bolumler;
+}
+@* burasıı fakultelerin genel bilgileri sayfası  *@
+<html>
+<head>
+
+</head>
+<body>
+
+
+    @foreach (var item in Model)
+    {
+        <h2 id="genelbilgilerbaslik1"> @item.Bolum.BolumAdi</h2>
+
+        <p>
+            @item.Aciklama1
+        </p>
+        <p>
+            @item.Aciklama2
+        </p>
+        <p>
+            @item.Aciklama3
+        </p>
+        <p>
+            @item.Aciklama4
+        </p>
+        <p>
+            @item.Aciklama5
+        </p>
+        <p>
+            @item.Aciklama6
+        </p>
+        <p>
+            @item.Aciklama7
+        </p>
+        <p>
+            @item.Aciklama8
+        </p>
+        <p>
+            @item.Aciklama9
+        </p>
+        <p>
+            @item.Aciklama10
+        </p>
+        <p>
+            @item.Aciklama11
+        </p>
+
+        <p>Bölümle ilgili daha ayrıntılı bilgi almak için <a href="@item.BolognaSureciLink" style="font-weight:900" target="_blank" id="butcelink">Bologna Süreci</a>  sayfamızı ziyaret edebilirsiniz.</p>
+        @if (item.Email1 != null && item.Email2 != null && item.Email3 != null)
+        {
+            <p>
+                Bölüme ilişkin sorularınız için
+                <email mail="@item.Email1" display="@item.Email1" style="font-weight:600" id="butcelink">@* bu arada gözüükecek değere display'e atadım *@</email> ,
+                <email mail="@item.Email2" display="@item.Email2" style="font-weight:600" id="butcelink"></email> veya
+                <email mail="@item.Email3" display="@item.Email3" style="font-weight:600" id="butcelink"></email>
+                adreslerine mail atabilirsiniz.
+            </p>
+        }
+        else if (item.Email1 != null && item.Email2 != null)
+        {
+            <p>
+                Bölüme ilişkin sorularınız için
+                <email mail="@item.Email1" display="@item.Email1" style="font-weight:600" id="butcelink">@* bu arada gözüükecek değere display'e atadım *@</email> veya
+                <email mail="@item.Email2" display="@item.Email2" style="font-weight:600" id="butcelink"></email>
+                adreslerine mail atabilirsiniz.
+            </p>
+        }
+        else
+        {
+            <p>
+                Bölüme ilişkin sorularınız için
+                <email mail="@item.Email1" display="@item.Email1" style="font-weight:600" id="butcelink">@* bu arada gözüükecek değere display'e atadım *@</email>
+                adresine mail atabilirsiniz.
+            </p>
+        }
+<br />
+        <a asp-action="BolumVeAnabilimDaliBaskanliklari" asp-route-id="@fakulte.ID" style="font-weight:600" id="butcelink">Bölümlerin Ana Bilim Dalları için tıklayınız.</a>
+    }
+
+
+
+</body>
+</html>

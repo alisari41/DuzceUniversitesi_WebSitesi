@@ -1,0 +1,172 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.GenelBilgiler
+
+@{
+    ViewData["Title"] = "Genel Bigi Ekleme İşlemleri";
+}
+
+<br />
+<h2>Genel Bigi Ekle</h2>
+<hr />
+
+
+
+<form asp-action="Create" asp-controller="GenelBilgiler" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Fakülte</label>
+        <div class="col-md-9">
+            <select asp-for="FakulteID" class="form-control text-info" asp-items="ViewBag.FakulteID">
+                <option value=""> Seçiniz</option>   @* Boş geçebilmek için yaptım *@
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Enstitü</label>
+        <div class="col-md-9">
+            <select asp-for="EnstituID" class="form-control text-info" asp-items="ViewBag.EnstituID">
+                <option value=""> Seçiniz</option>   @* Boş geçebilmek için yaptım *@
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">ResimUrl</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="ResimUrl" class="form-control text-info" />
+            <span asp-validation-for="ResimUrl" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama1</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama1" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama2</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama2" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama3</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama3" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama4</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama4" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama5</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama5" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Misyonumuz</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Misyonumuz" class="form-control text-info" />
+            <span asp-validation-for="Misyonumuz" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Vizyonumuz</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Vizyonumuz" class="form-control text-info" />
+            <span asp-validation-for="Vizyonumuz" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Başlık</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkBaslik" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 1</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama1" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 2</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama2" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 3</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama3" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 4</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama4" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 5</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama5" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 6</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama6" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 7</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama7" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 8</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama8" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 9</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama9" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 10</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama10" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 11</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama11" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ek Açıklama 12</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="EkAciklama12" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default bi bi-megaphone-fill guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                &nbsp; Genel Bigi Ekle
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<a asp-action="Index" asp-controller="GenelBilgiler" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

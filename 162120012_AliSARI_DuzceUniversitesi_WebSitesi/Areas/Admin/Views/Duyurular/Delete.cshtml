@@ -1,0 +1,124 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Duyurular
+
+@{
+    ViewData["Title"] = "Duyuru Sil";
+}
+
+<h3 style="font-weight:bold">Bu duyuruyu silmek istediğinizden emin misiniz ?</h3>
+
+<div style="margin-left:25px">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Duyuru Kategori
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DuyuruKategori) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            İçerik
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Icerik) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            Tarih
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Tarih) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            Aktif Mi
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.AktifMi) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Aciklama1)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Aciklama1) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Aciklama2)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Aciklama2) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Aciklama3)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Aciklama3) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Aciklama4)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Aciklama4) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Aciklama5)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Aciklama5) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResimUrl1)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ResimUrl1) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResimUrl2)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ResimUrl2) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResimUrl3)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ResimUrl3) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResimUrl4)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ResimUrl4) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResimUrl5)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ResimUrl5) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResimUrl6)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ResimUrl6) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResimUrl7)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ResimUrl7) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResimUrl8)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ResimUrl8) &nbsp;
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <a asp-action="Index" class="btn btn-default fa fa-backward detaylamabuton col-sm-2" style="margin-left: 2px; border: 2px solid green;"> Geri Dön</a>
+            <input type="hidden" asp-for="ID" />
+            <button type="submit" class="btn btn-default fas fa-trash-alt silmebuton col-sm-2" style="margin-left:98px;border: 2px solid red;">&nbsp; Sil</button>
+        </div>
+    </form>
+</div>

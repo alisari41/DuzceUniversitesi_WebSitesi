@@ -1,0 +1,9 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Enstitu>
+
+@{
+    foreach (var item in Model)
+    {
+        <li class="item"><a class="dropdown-item" href="/Enstituler/@item.EnstituAdi.Replace(" ","-")/@item.ID">@item.EnstituAdi</a></li>
+        // Burası navbarda link oluşturmak için yönlendirme
+    }
+}

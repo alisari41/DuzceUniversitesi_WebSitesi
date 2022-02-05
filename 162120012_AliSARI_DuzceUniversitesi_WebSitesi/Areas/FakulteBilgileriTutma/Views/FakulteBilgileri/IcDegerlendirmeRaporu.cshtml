@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@* Kendi oluşturdup-ğum TagHelper *@
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.IcDegerlendirmeRaporu>
+@{
+    var fakulte = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Fakulte)ViewBag.Fakulteler;
+    var bolumler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Bolum)ViewBag.Bolumler;
+}
+@* burasıı fakultelerin genel bilgileri sayfası  *@
+<html>
+<head>
+
+</head>
+<body>
+
+    <h2 id="genelbilgilerbaslik1">İç Değerlendirme Raporu</h2>
+
+    @foreach (var item in Model)
+    {
+        <p>
+            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama </a>
+        </p>
+
+    }
+
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewData["Title"] = "Barınma";
+}
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/fotografvevidoegaleri.css?Version=1" />
+</head>
+<body id="ilklerbody">
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Barınma
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid" id="bodykismi">
+        <h2 id="baslik1">Barınma</h2>
+        <br />
+
+        <h6 style="font-weight: 300;"> Öğrencilerimiz barınma ihtiyacını; </h6><br />
+
+        <h5 style="font-weight: 400;">1- Kredi ve Yurtlar Kurumu (KYK) yurtlarından;</h5>
+        <p>
+            Düzce'de halen Kredi ve Yurtlar Kurumu'na bağlı 6'sı kız olmak üzere 12 yükseköğrenim öğrenci yurdu bulunmaktadır. 2020-2021 Eğitim-öğretim yılında 1 adet yeni yurt binası da faaliyete açılacaktır.
+        </p>
+        <p>
+            Yeni ilave dilecek yurt binaları ile birlikte toplam 10.507 öğrencimize Kredi ve Yurtlar Kurumu (KYK) yükseköğrenim öğrenci yurtlarında modern, rahat, güvenli ve düşük ücretle barınma imkanı sağlanmaktadır.
+        </p>
+
+        <p>Başvuru, duyuru ve bilgi almak için <a href="https://kygm.gsb.gov.tr/" target="_blank" id="butcelink">TIKLAYINIZ..</a></p>
+        <p>Yurtlar ile ilgili görseller için <a href="https://www.kykyurtlar.com/duzce-merkez-kyk-yurtlari/" target="_blank" id="butcelink">TIKLAYINIZ..</a></p>
+
+        <div class="tab-content">
+            <div id="link1" class="container tab-pane  active  m-md-auto">
+                <div class="tz-gallery">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <a class="lightbox" href="~/img/yurt1.jpg">
+                                <img src="~/img/yurt1.jpg" alt="Park" title="KYK YURT">
+                            </a>
+                        </div>
+                        <br /><br />
+                        <div class="col-sm-12 col-md-12">
+                            <a class="lightbox" href="~/img/yurt2.jpg">
+                                <img src="~/img/yurt2.jpg" alt="Park" title="KYK YURT">
+                            </a>
+                        </div>
+                        <br /><br />
+                        <div class="col-sm-12 col-md-12">
+                            <a class="lightbox" href="~/img/yurt4.jpg">
+                                <img src="~/img/yurt4.jpg" alt="Park" title="KYK YURT">
+                            </a>
+                        </div>
+                        <br /><br />
+                        <div class="col-sm-12 col-md-12">
+                            <a class="lightbox" href="~/img/yurt3.jpg">
+                                <img src="~/img/yurt3.jpg" alt="Park" title="KYK YURT">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </div>
+        <h5 style="font-weight: 400;">2- Özel yurt, pansiyon ve konuk evlerinden</h5>
+        <h5 style="font-weight: 400;">3- Kiralık apart vb. evlerden</h5>
+        <br />
+        <h6 style="font-weight: 300;">karşılayabilirler. </h6>
+
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
+
+</body>
+</html>
+

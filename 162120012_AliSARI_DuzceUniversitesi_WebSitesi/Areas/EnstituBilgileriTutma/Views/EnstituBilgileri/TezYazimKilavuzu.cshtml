@@ -1,0 +1,41 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@* Kendi oluşturdup-ğum TagHelper *@
+@{
+    var enstitu = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Enstitu)ViewBag.Enstituler;
+    var bolumler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Bolum)ViewBag.Bolumler;
+}
+@* burasıı fakultelerin genel bilgileri sayfası  *@
+<html>
+<head>
+
+</head>
+<body>
+
+    <h2 id="genelbilgilerbaslik1">
+        Tez Yazım Kılavuzu
+    </h2>
+    <p>
+        <a href="https://cdn.duzce.edu.tr/File/GetFile/f7193bc4-131c-464b-8321-d6eb959b9a2c" style="font-weight:600" target="_blank" id="butcelink">
+            <strong>Tez Yazım Kılavuzu için tıklayınız.</strong>
+        </a>
+    </p>
+    <p>
+        <a href="https://gse.duzce.edu.tr/Dokumanlar/gse/FORMLAR/Ornak ozgecmis sayfası.docx" style="font-weight:600" target="_blank" id="butcelink">
+            <strong>Özgeçmiş Sayfası Örneği</strong>
+        </a>
+        <span style="color:#ff0000">(Tez içinde yer alması gereken)</span>
+    </p>
+
+    <p>
+        <br />
+        <strong><span style="color:#ff0000">NOT:</span></strong>
+        YÖK Yürütme Kurulu, 13.05.2020 tarihli toplantısında, kişisel verilerin korunması açısından
+        <strong>Ulusal Tez Merkezi Tez Otomasyon Sistemine</strong>
+        enstitüler tarafından lisansüstü tezler yüklenirken, tez jürisinin kişisel bilgileri ile imzalarının bulunduğu "Tez Onay Sayfası" olmaksızın yüklenmesinin uygun olduğuna karar vermiştir.
+    </p>
+    <p>
+        Bu nedenle, Enstitümüze dijital olarak teslim edilecek tez kopyalarında  "Tez Onay Sayfası"nın yer almaması gerekmektedir.
+    </p>
+
+</body>
+</html>

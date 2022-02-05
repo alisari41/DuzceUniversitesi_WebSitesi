@@ -1,0 +1,115 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.PersonelSayilari>
+
+@{
+    ViewData["Title"] = "Personel Sayıları";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Personel Sayıları
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid" id="bodykismi">
+        <h2 id="baslik1">Personel Sayıları</h2>
+        <br /><br />
+
+        <div class="table-responsive">
+            <table class="table table-hover table-sm table-bordered" style="width:460px">
+                <thead>
+
+                    <tr>
+                        <td style="width: 456px;" colspan="2" height="20"><strong>AKADEMİK PERSONEL SAYISI</strong></td>                        
+                    </tr>
+                    <tr>
+                        <th style="width:210px">
+                            Ünvan
+                        </th>
+                        <th style="width:244px">
+                            Sayı
+                        </th>
+                    </tr>
+                </thead>
+
+                @{
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.PersonelSayilariKategori.Kategori == "AKADEMİK PERSONEL SAYISI")
+                            {
+                                <tr>
+                                    <td style="width:210px">
+                                        @Html.DisplayFor(modelItem => item.Unvan)
+                                    </td>
+                                    <td style="width:244px">
+                                        @Html.DisplayFor(modelItem => item.Sayi)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                }
+            </table>
+
+        </div>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-hover table-sm table-bordered" style="width:460px">
+                <thead>
+                    <tr>
+                        <td style="width: 456px;" colspan="2" height="20"><strong>İDARİ PERSONEL SAYISI</strong></td>
+                    </tr>
+                    <tr>
+                        <th style="width:210px">
+                            SINIF
+                        </th>
+                        <th style="width:244px">
+                            Sayı
+                        </th>
+                    </tr>
+                </thead>
+
+                @{
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.PersonelSayilariKategori.Kategori == "İDARİ PERSONEL SAYISI")
+                            {
+                                <tr>
+                                    <td style="width:210px">
+                                        @Html.DisplayFor(modelItem => item.HizmetYeri)
+                                    </td>
+                                    <td style="width:244px">
+                                        @Html.DisplayFor(modelItem => item.Sayi)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                }
+            </table>
+
+        </div>
+    </div>
+
+
+</body>
+</html>

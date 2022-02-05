@@ -1,0 +1,63 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim>
+
+@{
+    ViewData["Title"] = "Rektör Yardımcıları";
+}
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="~/css/DukkanStyle.css?Version=9" />
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Rektör Yardımcıları
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+
+    <div class="container-fluid" id="bodykismi">
+
+        <h2 id="baslik1">Rektör Yardımcıları</h2>
+        <div class="row">
+
+            @{
+                foreach (var item in Model)
+                {    /*Dükkan*/
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card mb-4" id="rektoryrdcard">
+                            <a href="@item.FotografUrl" target="_blank">
+                                <img class="card-img-top " width="100%" src="@item.FotografUrl" alt="Card image cap" height="300">
+                            </a>
+
+                            <div class="card-body" style="text-align:center;">
+
+                                @Html.ActionLink(item.Unvan + item.Ad + item.Soyad, "YonetimdekiKisilerDetay", new { id = item.ID }, new { @class = "rektoryrdtitle" })
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+
+    </div>
+    <br /><br /><br />
+</body>
+</html>
+

@@ -1,0 +1,155 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models;
+@using Microsoft.AspNetCore.Mvc.Filters;
+@{
+    ViewBag.Title = "Admin";
+    var kullaniciAdi = Context.Session.GetString("AdminLoginKullaniciEmailSession");
+}
+
+@* Buralar değişecek bütün linkler değişmesi lazım *@
+
+<h2 style="font-size:42px;color:rgba(29, 10, 10, 0.7);margin-left:15px"> Yönetici Paneline Hoşgeldiniz</h2>
+<br />
+<br />
+<ul>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/Kullanici" class="fas fa-address-card" style="text-decoration: none;font-size:22px">&nbsp; Üyeler Yönetimi</a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/YonetimKategori" class=" fa fa-thumb-tack " style="text-decoration: none;font-size:22px;">&nbsp; Yönetim Kategori</a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/Yonetims" class=" fa  " style="text-decoration: none;font-size:22px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+                <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z" />
+            </svg> &nbsp;Yönetimdeki Kişiler
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/OgrenciSayilari" class="fa" style="text-decoration: none;font-size:22px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+            </svg> &nbsp; Öğrenci Sayıları
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/PersonelSayilariKategori" class="fa bi bi-bookmark-plus" style="text-decoration: none;font-size:22px">
+            &nbsp; Personel Sayıları Kategori
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/PersonelSayilari" class="fa bi bi-person-plus" style="text-decoration: none;font-size:22px">
+            &nbsp; Personel Sayıları
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/BolumveProgramSayilariKategori" class="fa bi bi-bookmark-plus" style="text-decoration: none;font-size:22px">
+            &nbsp; Bölüm Program Sayıları Kategori
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/BolumveProgramSayilari" class="fa fa-tasks" style="text-decoration: none;font-size:22px">
+            &nbsp; Bölüm Program Sayıları
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/Fakulte" class="fa fa-university" style="text-decoration: none;font-size:22px">
+            &nbsp; Fakülte
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/Bolum" class="fa fa-university" style="text-decoration: none;font-size:22px">
+            &nbsp; Bölüm
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/Personel" class="fa fa-users" style="text-decoration: none;font-size:22px">
+            &nbsp; Personel
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/DuyuruKategori" class="fa bi bi-megaphone" style="text-decoration: none;font-size:22px">
+            &nbsp; Duyuru Kategori
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/Duyurular" class="fa bi bi-megaphone" style="text-decoration: none;font-size:22px">
+            &nbsp; Duyuru
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        <a href="/Admin/Dukkan" class="fa bi bi-shop" style="text-decoration: none;font-size:22px">
+            &nbsp; Dükkan
+        </a>
+    </li>
+    <br />
+    <br />
+    <div class="row"></div>
+    <li style=" list-style-type: none;">
+        @Html.ActionLink(" Oturum Kapat", "Cikis", new { }, new { @class = " fa fa-sign-out-alt ", style = " text-decoration: none;font-size:22px" })
+    </li>
+
+    <br />
+
+</ul>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

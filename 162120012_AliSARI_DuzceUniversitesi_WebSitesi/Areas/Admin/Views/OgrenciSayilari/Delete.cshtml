@@ -1,0 +1,54 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.OgrenciSayilari
+
+@{
+    ViewData["Title"] = "Öğrenci Sayıları Silme";
+}
+
+
+<h3 style="font-weight:bold">Bu kişiyi silmek istediğinizden emin misiniz ?</h3>
+
+<div style="margin-left:25px">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Öğrenim Düzeyi
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.OgrenimDuzeyi)
+        </dd>
+        <dt class="col-sm-3">
+            Akademik Birim
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.AkademikBirim)
+        </dd>
+        <dt class="col-sm-3">
+            Kadın Sayısı
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.KadinSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            Erkek Sayısı
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ErkekSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            Toplam
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Toplam)
+        </dd>
+    </dl>
+
+
+    <form asp-action="Delete" asp-controller="OgrenciSayilari">
+        <div class="form-actions no-color">
+            <a asp-action="Index" asp-controller="OgrenciSayilari" class="btn btn-default fa fa-backward detaylamabuton col-sm-2" style="margin-left: 2px; border: 2px solid green;"> Geri Dön</a>
+            <input type="hidden" asp-for="ID" />
+            <button type="submit" class="btn btn-default fas fa-trash-alt silmebuton col-sm-2" style="margin-left:98px;border: 2px solid red;">&nbsp; Sil</button>
+        </div>
+    </form>
+</div>

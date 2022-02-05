@@ -1,0 +1,66 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim>
+
+@{
+    ViewData["Title"] = "Rektör";
+}
+<html>
+<head>
+
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Rektör
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid" id="bodykismi">
+        <h2 id="baslik1">Rektör</h2>
+        @foreach (var item in Model)
+        {
+
+            <p style="text-align:center;font-weight:600;">
+                <a href="@Html.DisplayFor(modelItem=>item.FotografUrl)" target="_blank">
+                    <img src="@Html.DisplayFor(modelItem=>item.FotografUrl)" id="rektorresim" />
+                </a>
+                <br />
+                @Html.DisplayFor(modelItem => item.Unvan) @Html.DisplayFor(modelItem => item.Ad) @Html.DisplayFor(modelItem => item.Soyad) Kimdir?
+
+            </p>
+            <p>@Html.DisplayFor(modelItem => item.Aciklama1)</p>
+            <p>@Html.DisplayFor(modelItem => item.Aciklama2)</p>
+            <p>@Html.DisplayFor(modelItem => item.Aciklama3)</p>
+            <p>@Html.DisplayFor(modelItem => item.Aciklama4)</p>
+            <p>@Html.DisplayFor(modelItem => item.Aciklama5)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar1)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar2)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar3)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar4)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar5)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar6)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar7)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar8)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar9)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar10)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar11)</p>
+            <p>@Html.DisplayFor(modelItem => item.Yayinlar12)</p>
+            <br /><br />
+        }
+    </div>
+
+
+</body>
+</html>

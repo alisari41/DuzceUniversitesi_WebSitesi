@@ -1,0 +1,63 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, 162120012_AliSARI_DuzceUniversitesi_WebSitesi
+@* Kendi oluşturdup-ğum TagHelper *@
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim>
+
+@{
+
+    var enstitu = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Enstitu)ViewBag.Enstituler;
+    var yonetimler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim)ViewBag.Yonetimler;
+}
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="~/css/FakulteYonetimKisiler.css?Version=1" />
+</head>
+<body>
+    <h2 id="genelbilgilerbaslik1">Yönetim Kurulu</h2>
+    @*@yonetimler.*@
+
+    <div class="table-responsive">
+        <table class="table table-hover table-sm table-bordered" id="bolumveanabilimfakulte">
+            <thead>
+
+                <tr>
+                    <td colspan="4" height="20" style="text-align:center"><strong>ENSTİTÜ YÖNETİM KURULU</strong></td>
+                </tr>
+
+            </thead>
+
+            @{
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        if ((item.YonetimKategori.Gorevi.IndexOf("Müdür", 0) >= 1) ||
+                                (item.YonetimKategori.Gorevi.IndexOf("Kurulu", 0) >= 1) ||
+                                (item.YonetimKategori.Gorevi.IndexOf("Sekreter", 0) >= 1))
+                        {
+
+                            <tr>
+                                <td style="width:380px">
+                                    @Html.DisplayFor(modelItem => item.YonetimKategori.Gorevi)
+                                </td>
+                                <td style="width:380px">
+                                    <a asp-action="YonetimdekiKisilerDetay" asp-route-id="@item.ID" asp-route-fakulteid="@enstitu.ID" id="butcelink">@item.Unvan @item.Ad @item.Soyad</a>
+                                </td>
+                                <td style="width:334px">
+                                    <email mail="@item.Email" display="@item.Email" style="font-weight:600" id="butcelink"></email>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            }
+        </table>
+
+    </div>
+    <br />
+
+
+
+    <br /><br /><br />
+</body>
+</html>

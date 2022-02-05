@@ -1,0 +1,53 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.PersonelSayilari
+
+@{
+    ViewData["Title"] = "Personel Sayısı Ekle";
+}
+
+<br />
+<h2>Personel Sayısı Ekle</h2>
+<hr />
+
+
+<form asp-action="Create" asp-controller="PersonelSayilari" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Birimi</label>
+        <div class="col-md-9">
+            <select asp-for="PersonelSayilariKategoriID" class="form-control text-info" asp-items="ViewBag.PersonelSayilariKategoriID"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ünvan</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Unvan" class="form-control text-info" />
+            <span asp-validation-for="Unvan" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Hizmet Yeri</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="HizmetYeri" class="form-control text-info" />
+            <span asp-validation-for="HizmetYeri" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Sayı</label>
+        <div class="col-md-9">
+            <input type="number" asp-for="Sayi" class="form-control text-info" />
+            <span asp-validation-for="Sayi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default bi bi-person-plus guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                &nbsp; Personel Sayısı Ekle
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<a asp-action="Index" asp-controller="PersonelSayilari" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

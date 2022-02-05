@@ -1,0 +1,46 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.YonetmelikVeYonergeler
+
+@{
+    ViewData["Title"] = "Yönetmelik ve Yönergeleri Silme İşlemi";
+}
+<h3 style="font-weight:bold">Yönetmelik ve Yönergeleri silmek istediğinizden emin misiniz ?</h3>
+
+<div style="margin-left:25px">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Kategori
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.YonetmelikVeYonergelerKategori.Kategori)
+        </dd>
+        <dt class="col-sm-3">
+            Tarih
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+        <dt class="col-sm-3">
+            Açıklama
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+        <dt class="col-sm-3">
+            Link
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+    </dl>
+
+    <form asp-action="Delete" asp-controller="YonetmelikVeYonergeler">
+        <div class="form-actions no-color">
+            <a asp-action="Index" asp-controller="YonetmelikVeYonergeler" class="btn btn-default fa fa-backward detaylamabuton col-sm-2" style="margin-left: 2px; border: 2px solid green;"> Geri Dön</a>
+            <input type="hidden" asp-for="ID" />
+            <button type="submit" class="btn btn-default fas fa-trash-alt silmebuton col-sm-2" style="margin-left:98px;border: 2px solid red;">&nbsp; Sil</button>
+        </div>
+    </form>
+</div>

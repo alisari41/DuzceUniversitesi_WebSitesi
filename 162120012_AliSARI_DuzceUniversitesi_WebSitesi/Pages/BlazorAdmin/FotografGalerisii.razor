@@ -1,0 +1,83 @@
+﻿@page "/blazoradmin/FotografGalerisii"
+
+@using _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models;
+@using Microsoft.AspNetCore.Components.Web
+@inject FotografGalerisiService objFotografGalerisiService
+@using Microsoft.AspNetCore.Components.Forms
+
+
+<h1>Multiple File Upload .Net 6!</h1>
+
+<InputFile OnChange="OnInputFileChange" multiple />
+@*<button class="btn btn-success" @onclick="@FileUploadToSQLDb">Upload To SQL</button>*@
+<input type="button" class="btn btn-success" @onclick="@FileUploadToSQLDb" value="Upload To SQL" />
+<br />
+<label>@labelText</label>
+
+@if (imageDataUrls != null && imageDataUrls.Count > 0)
+{
+    <div class="col-12 image-list">
+
+        <img src="~/resimler/10a04982-29a9-4b3a-ab15-0a8d090ac583.PNG" />
+        @foreach (var item in imageDataUrls)
+        {
+            <div style="border:1px solid #000000;float:left;margin:2px;">
+                <img src="@item" width=150 height=150 />
+            </div>
+        }
+    </div>
+}
+
+
+@code{
+    IList<string> imageDataUrls = new List<string>();
+    IList<FotografGalerisi> imageList = new List<FotografGalerisi>();
+    string labelText = "";
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetUploadFiles();
+    }
+
+    async Task OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        var imageFiles = e.GetMultipleFiles();
+        var format = "image/png";
+        foreach (var img in imageFiles)
+        {
+            var imageInfo = new FotografGalerisi();
+            var resizedImageFile = await img.RequestImageFileAsync(format, 100, 100);
+            var buffer = new byte[resizedImageFile.Size];
+
+            await resizedImageFile.OpenReadStream().ReadAsync(buffer);
+            var imgUrl = $"data:{format};base64,{Convert.ToBase64String(buffer)}";
+
+            imageDataUrls.Add(imgUrl);
+            imageInfo.FotografAdı = img.Name;
+            imageInfo.Filse = buffer;
+
+            imageList.Add(imageInfo);
+
+        }
+    }
+
+    public async void FileUploadToSQLDb()
+    {
+        await objFotografGalerisiService.UploadFiles(imageList);
+        labelText = "Upload Success";
+        GetUploadFiles();
+        this.StateHasChanged();
+    }
+
+    public async Task GetUploadFiles()
+    {
+        imageList = await objFotografGalerisiService.GetUploadFiles();
+        var format = "image/png";
+        foreach (var image in imageList)
+        {
+            var imgUrl = $"data:{format};base64,{Convert.ToBase64String(image.Filse)}";
+            imageDataUrls.Add(imgUrl);
+        }
+    }
+}

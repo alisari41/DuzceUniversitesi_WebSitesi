@@ -1,0 +1,248 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Personel>
+
+@{
+    ViewData["Title"] = "Personeller";
+}
+
+<br />
+<h2>Personeller</h2>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-danger fa fa-user-plus"> Personel Ekle</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-hover table-sm table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bolum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonelKategori)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fakulte)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Enstitu)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Soyad)
+                </th>
+                <th>
+                    Ünvan
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    Telefon Numarası
+                </th>
+                <th>
+                    TC Kimlik Numarası
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonelLink)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FotografUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama5)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar5)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar6)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar7)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar8)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar9)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar10)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar11)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yayinlar12)
+                </th>
+                <th>Güncelle</th>
+                <th>Detay</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bolum.BolumAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonelKategori.Kategori)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fakulte.FakulteAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Enstitu.EnstituAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Unvan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TCKimlikNumarasi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonelLink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FotografUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aciklama1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aciklama2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aciklama3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aciklama4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aciklama5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar6)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar7)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar8)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar9)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar10)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar11)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yayinlar12)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-default fas fa-edit   guncellemebuton" style="border: 2px solid green;"> Güncelle</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ID" class="btn  btn-default fas fa-info detaylamabuton" style="border: 2px solid #39ded8;"> Detay</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-default fas fa-trash-alt silmebuton" style="border: 2px solid red;"> Sil</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<style>
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: #00ff21;
+    }
+
+        .guncellemebuton:hover {
+            background-color: #851111;
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        color: #39ded8;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #1e4e4c;
+            color: white;
+        }
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+</style>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Personel>
+
+@{
+
+}
+<html>
+<head>
+
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+
+
+
+        <h2 id="baslik1">@item.Ad @item.Soyad</h2>
+        <p style="text-align:center;font-weight:600;">
+            <a href="@item.FotografUrl" target="_blank">
+                <img src="@item.FotografUrl" id="fakulteyonetimdetayresim">
+            </a>
+            <br />
+            @item.Unvan @item.Ad @item.Soyad Kimdir?
+        </p>
+        <p> @item.Aciklama1</p>
+        <p> @item.Aciklama2</p>
+        <p> @item.Aciklama3</p>
+        <p> @item.Aciklama4</p>
+
+        if ((item.Yayinlar1 == null) && (item.Yayinlar2 == null) && (item.Yayinlar3 == null) && (item.Yayinlar4 == null)
+               && (item.Yayinlar5 == null) && (item.Yayinlar6 == null) && (item.Yayinlar7 == null) && (item.Yayinlar8 == null)
+               && (item.Yayinlar9 == null) && (item.Yayinlar10 == null) && (item.Yayinlar11 == null) && (item.Yayinlar12 == null))
+        { /* Yayınların hepsi boş ise birşey yapma */
+
+        }
+        else
+        { /* Yayınlardan herhangi biri dolu ise başlık at */
+            <h4 id="#rektoryrdyayinlari">Yayınları: </h4>
+        }
+
+
+        <p> @item.Yayinlar1   </p>
+        <p> @item.Yayinlar2   </p>
+        <p> @item.Yayinlar3   </p>
+        <p> @item.Yayinlar4   </p>
+        <p> @item.Yayinlar5   </p>
+        <p> @item.Yayinlar6   </p>
+        <p> @item.Yayinlar7   </p>
+        <p> @item.Yayinlar8   </p>
+        <p> @item.Yayinlar9   </p>
+        <p> @item.Yayinlar10   </p>
+        <p> @item.Yayinlar11   </p>
+        <p> @item.Yayinlar12   </p>
+        @*  <ul style="list-style-type:none; margin-top:0">*@
+        @*</ul>*@
+
+        <p> @item.Aciklama5</p>
+
+    }
+
+
+</body>
+</html>

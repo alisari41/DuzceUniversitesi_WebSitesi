@@ -1,0 +1,33 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.DersProgramlariKategori
+
+@{
+    ViewData["Title"] = "Ders Programlerı için Kategori Güncelle";
+}
+
+<h2>Ders Programlerı için Kategori Güncelle</h2>
+<hr />
+
+<form asp-action="Edit" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label class="control-label col-md-3">
+            Program Türü
+        </label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Kategori" class="form-control text-info" />
+            <span asp-validation-for="Kategori" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default bi bi-file-earmark-arrow-up guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                &nbsp; Ders Program Türü Güncelle
+            </button>
+        </div>
+    </div>
+</form>
+
+<a asp-action="Index" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

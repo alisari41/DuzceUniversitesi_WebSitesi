@@ -1,0 +1,45 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.OrganizasyonSemasi>
+@{
+    var enstitu = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Enstitu)ViewBag.Enstituler;
+    var bolumler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Bolum)ViewBag.Bolumler;
+}
+<html>
+<head>
+
+</head>
+<body>
+
+    <h5 style="font-weight: 600; text-align: center; color: #0099cc">
+        TC.
+    </h5>
+    <h5 style="font-weight: 600; text-align: center; color: #0099cc">
+        DÜZCE ÜNİVERSİTESİ
+    </h5>
+    <h5 style="font-weight: 600; text-align: center; color: #0099cc">
+        @enstitu.EnstituAdi
+    </h5>
+    <h5 style="font-weight: 600; text-align: center; color: #0099cc">
+        Organizasyon Şeması
+    </h5>
+    <br />
+
+    @foreach (var item in Model)
+    {
+
+
+        <p style="text-align:center">
+            <a href="@Html.DisplayFor(modelItem=>item.ResimUrl)" target="_blank">
+                <img src="@Html.DisplayFor(modelItem=>item.ResimUrl)" style="text-align:center;" id="rektorresim" />
+            </a>
+        </p>
+    }
+
+
+
+    <br />
+
+
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Duyurular>
+
+@{
+    ViewData["Title"] = "Duyurular";
+}
+
+<br />
+<h2>Personeller</h2>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-danger fa fa-user-plus"> Duyuru Ekle</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-hover table-sm table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DuyuruKategori)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Baslik)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Icerik)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tarih)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AktifMi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama5)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResimUrl1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResimUrl2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResimUrl3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResimUrl4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResimUrl5)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResimUrl6)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResimUrl7)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResimUrl8)
+                </th>
+                <th>Güncelle</th>
+                <th>Detay</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DuyuruKategori)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Baslik)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Icerik)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tarih)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AktifMi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aciklama1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aciklama2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aciklama3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aciklama4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aciklama5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResimUrl1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResimUrl2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResimUrl3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResimUrl4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResimUrl5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResimUrl6)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResimUrl7)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResimUrl8)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-default fas fa-edit   guncellemebuton" style="border: 2px solid green;"> Güncelle</a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="btn  btn-default fas fa-info detaylamabuton" style="border: 2px solid #39ded8;"> Detay</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-default fas fa-trash-alt silmebuton" style="border: 2px solid red;"> Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<style>
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: #00ff21;
+    }
+
+        .guncellemebuton:hover {
+            background-color: #851111;
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        color: #39ded8;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #1e4e4c;
+            color: white;
+        }
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+</style>

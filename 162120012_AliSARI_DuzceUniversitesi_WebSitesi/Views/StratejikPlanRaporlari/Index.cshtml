@@ -1,0 +1,94 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.StratejikPlanRaporlari>
+
+@{
+    ViewData["Title"] = "Stratejik Plan Raporları";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Stratejik Plan Raporları
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid" id="bodykismi">
+        <h2 id="baslik1">Stratejik Plan Raporları </h2>
+        <br /><br />
+
+              <p style="font-weight:600;">
+                  2020 - 2024 STRATEJİK PLAN ÇALIŞMALARI
+              </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.StratejikPlanRaporlariKategori.Kategori == "2020 - 2024 STRATEJİK PLAN ÇALIŞMALARI")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+
+        <p style="font-weight:600;">
+            2015 - 2019 STRATEJİK PLAN ÇALIŞMALARI
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.StratejikPlanRaporlariKategori.Kategori == "2015 - 2019 STRATEJİK PLAN ÇALIŞMALARI")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            2010 - 2014 STRATEJİK PLAN ÇALIŞMALARI
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.StratejikPlanRaporlariKategori.Kategori == "2010 - 2014 STRATEJİK PLAN ÇALIŞMALARI")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+       
+        <br /><br />
+
+
+    </div>
+
+
+</body>
+</html>

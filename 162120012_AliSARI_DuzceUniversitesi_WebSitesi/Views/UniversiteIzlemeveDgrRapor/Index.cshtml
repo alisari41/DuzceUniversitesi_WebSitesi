@@ -1,0 +1,195 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.UniversiteIzlemeveDgrRapor>
+
+@{
+    ViewData["Title"] = "Üniversite İzleme ve Değerlendirme Raporu";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Üniversite İzleme ve Değerlendirme Raporu
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid"  id="bodykismi">
+        <h2 id="baslik1">Üniversite İzleme ve Değerlendirme Raporu</h2>
+        <br /><br />
+
+        <div class="table-responsive">
+            <table class="table table-hover table-sm table-bordered" style="width:697px">
+                <thead>
+                    <tr>
+                        <th style="width:575px">
+                            Kriterler
+                        </th>
+                        <th style="width:119px">
+                            Say/Oran
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 693px;" colspan="2" height="20"><strong>A. Eğitim ve Öğretim</strong></td>
+                    </tr>
+
+                </thead>
+
+                @{
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.UniversiteIzlemeveDgrRaporKategori.Kategori == "A. Eğitim ve Öğretim")
+                            {
+                                <tr>
+                                    <td style="width:575px">
+                                        A.@Html.DisplayFor(modelItem => item.Kriterler)
+                                    </td>
+                                    <td style="width:119">
+                                        @Html.DisplayFor(modelItem => item.Say_Oran)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                }
+            </table>
+
+        </div>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-hover table-sm table-bordered" style="width:697px">
+                <thead>
+                    <tr>
+                        <th style="width:575px">
+                            Kriterler
+                        </th>
+                        <th style="width:119px">
+                            Say/Oran
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 693px;" colspan="2" height="20"><strong>B. Araştırma-Geliştirme, Proje ve Yayın</strong></td>
+                    </tr>
+
+                </thead>
+
+                @{
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.UniversiteIzlemeveDgrRaporKategori.Kategori == "B. Araştırma-Geliştirme, Proje ve Yayın")
+                            {
+                                <tr>
+                                    <td style="width:575px">
+                                        B.@Html.DisplayFor(modelItem => item.Kriterler)
+                                    </td>
+                                    <td style="width:119">
+                                        @Html.DisplayFor(modelItem => item.Say_Oran)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                }
+            </table>
+
+        </div>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-hover table-sm table-bordered" style="width:697px">
+                <thead>
+                    <tr>
+                        <th style="width:575px">
+                            Kriterler
+                        </th>
+                        <th style="width:119px">
+                            Say/Oran
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 693px;" colspan="2" height="20"><strong>C. Uluslararasılaşma</strong></td>
+                    </tr>
+
+                </thead>
+
+                @{
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.UniversiteIzlemeveDgrRaporKategori.Kategori == "C. Uluslararasılaşma")
+                            {
+                                <tr>
+                                    <td style="width:575px">
+                                        C.@Html.DisplayFor(modelItem => item.Kriterler)
+                                    </td>
+                                    <td style="width:119">
+                                        @Html.DisplayFor(modelItem => item.Say_Oran)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                }
+            </table>
+
+        </div>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-hover table-sm table-bordered" style="width:697px">
+                <thead>
+                    <tr>
+                        <th style="width:575px">
+                            Kriterler
+                        </th>
+                        <th style="width:119px">
+                            Say/Oran
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 693px;" colspan="2" height="20"><strong>D. Bütçe ve Finansman</strong></td>
+                    </tr>
+
+                </thead>
+
+                @{
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.UniversiteIzlemeveDgrRaporKategori.Kategori == "D. Bütçe ve Finansman")
+                            {
+                                <tr>
+                                    <td style="width:575px">
+                                        D.@Html.DisplayFor(modelItem => item.Kriterler)
+                                    </td>
+                                    <td style="width:119">
+                                        @Html.DisplayFor(modelItem => item.Say_Oran)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                }
+            </table>
+
+        </div>
+        <br /><br />
+    </div>
+
+
+</body>
+</html>

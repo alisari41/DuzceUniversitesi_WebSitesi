@@ -1,0 +1,147 @@
+﻿@page "/blazoradmin/AddDuyuru"
+
+@using _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models;
+@using Microsoft.AspNetCore.Components.Web
+@inject DuyuruService objDyuruService
+@inject NavigationManager NavigationManager
+
+<h2>Duyuru Ekle</h2>
+<hr />
+
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Kategori" class="control-label">Duyuru Kategori</label>
+                <select form="Kategori" class="form-control" @bind="@objduyuru.DuyuruKategori">
+                    <option value="">--Seçiniz--</option>
+                    <option value="Duyuru">Duyuru</option>
+                    <option value="Etkinlik">Etkinlik</option>
+                    <option value="Haber">Haber</option>
+                    <option value="Yayın">Yayın</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Baslik" class="control-label">Başlık</label>
+                <input for="Baslik" class="form-control" @bind="@objduyuru.Baslik" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Icerik" class="control-label">Icerik</label>
+                <input for="Icerik" class="form-control" @bind="@objduyuru.Icerik" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Aciklama1" class="control-label">Aciklama1</label>
+                <input for="Aciklama1" class="form-control" @bind="@objduyuru.Aciklama1" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Aciklama2" class="control-label">Aciklama2</label>
+                <input for="Aciklama2" class="form-control" @bind="@objduyuru.Aciklama2" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Aciklama3" class="control-label">Aciklama3</label>
+                <input for="Aciklama3" class="form-control" @bind="@objduyuru.Aciklama3" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Aciklama4" class="control-label">Aciklama4</label>
+                <input for="Aciklama4" class="form-control" @bind="@objduyuru.Aciklama4" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Aciklama5" class="control-label">Aciklama5</label>
+                <input for="Aciklama5" class="form-control" @bind="@objduyuru.Aciklama5" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Aciklama6" class="control-label">Aciklama6</label>
+                <input for="Aciklama6" class="form-control" @bind="@objduyuru.Aciklama6" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="ResimUrl1" class="control-label">ResimUrl1</label>
+                <input for="ResimUrl1" class="form-control" @bind="@objduyuru.ResimUrl1" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="ResimUrl2" class="control-label">ResimUrl2</label>
+                <input for="ResimUrl2" class="form-control" @bind="@objduyuru.ResimUrl2" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="ResimUrl3" class="control-label">ResimUrl3</label>
+                <input for="ResimUrl3" class="form-control" @bind="@objduyuru.ResimUrl3" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="ResimUrl4" class="control-label">ResimUrl4</label>
+                <input for="ResimUrl4" class="form-control" @bind="@objduyuru.ResimUrl4" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="ResimUrl5" class="control-label">ResimUrl5</label>
+                <input for="ResimUrl5" class="form-control" @bind="@objduyuru.ResimUrl5" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="ResimUrl6" class="control-label">ResimUrl6</label>
+                <input for="ResimUrl6" class="form-control" @bind="@objduyuru.ResimUrl6" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="ResimUrl7" class="control-label">ResimUrl7</label>
+                <input for="ResimUrl7" class="form-control" @bind="@objduyuru.ResimUrl7" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="ResimUrl8" class="control-label">ResimUrl8</label>
+                <input for="ResimUrl8" class="form-control" @bind="@objduyuru.ResimUrl8" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" @onclick="@CreateDuyuru" value="Ekle" />
+                <input type="button" class="btn btn-primary" @onclick="@Cancel" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+@code {
+    Duyurular objduyuru = new Duyurular();
+    protected void CreateDuyuru()
+    {
+        objDyuruService.Create(objduyuru);
+        NavigationManager.NavigateTo("/blazoradmin/Duyuruu");
+    }
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("/blazoradmin/Duyuruu");
+    }
+}

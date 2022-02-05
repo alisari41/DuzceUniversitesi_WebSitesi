@@ -1,0 +1,215 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim
+
+@{
+    ViewData["Title"] = "Yönetim Kişi Ekle";
+}
+
+<br />
+<h2>Yönetim Kişi Ekle</h2>
+<hr />
+
+
+<form asp-action="Create" asp-controller="Yonetims" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Görevi</label>
+        <div class="col-md-9">
+            <select asp-for="YonetimKategoriID" class="form-control text-info" asp-items="ViewBag.YonetimKategoriID"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Fakülte</label>
+        <div class="col-md-9">
+            <select asp-for="FakulteID" class="form-control text-info" asp-items="ViewBag.FakulteID">
+                <option value=""> Seçiniz</option>   @* Boş geçebilmek için yaptım *@
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Bölüm</label>
+        <div class="col-md-9">
+            <select asp-for="BolumID" class="form-control text-info" asp-items="ViewBag.BolumID">
+                <option value=""> Seçiniz</option>   @* Boş geçebilmek için yaptım *@
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Enstitü</label>
+        <div class="col-md-9">
+            <select asp-for="EnstituID" class="form-control text-info" asp-items="ViewBag.EnstituID">
+                <option value=""> Seçiniz</option>   @* Boş geçebilmek için yaptım *@
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Adı</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Ad" class="form-control text-info" />
+            <span asp-validation-for="Ad" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Soyadı</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Soyad" class="form-control text-info" />
+            <span asp-validation-for="Soyad" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Ünvan</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Unvan" class="form-control text-info" />
+            <span asp-validation-for="Unvan" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Email</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Email" class="form-control text-info" placeholder="alisari41@duzce.edu.tr" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Telefon Numarası</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Telefon" class="form-control text-info" placeholder="05340829924" />
+            <span asp-validation-for="Telefon" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Bölüm Dalı</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="BolumDali" class="form-control text-info" />
+            <span asp-validation-for="BolumDali" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Bölüm Görevi</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="BolumGorevi" class="form-control text-info" />
+            <span asp-validation-for="BolumGorevi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Fotoğraf Url</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="FotografUrl" class="form-control text-info" />
+            <span asp-validation-for="FotografUrl" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama1</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama1" class="form-control text-info" />
+            <span asp-validation-for="Aciklama1" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama2</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama2" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama3</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama3" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama4</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama4" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama5</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama5" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar1</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar1" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar2</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar2" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar3</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar3" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar4</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar4" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar5</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar5" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar6</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar6" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar7</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar7" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar8</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar8" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar9</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar9" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar10</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar10" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar11</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar11" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Yayınlar12</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Yayinlar12" class="form-control text-info" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+                    <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z" />
+                </svg>&nbsp; Yönetime Kişi Ekle
+            </button>
+        </div>
+    </div>
+</form>
+<a asp-action="Index" asp-controller="Yonetims" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

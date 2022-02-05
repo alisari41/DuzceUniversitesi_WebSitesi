@@ -1,0 +1,96 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.YonetmelikVeYonergeler>
+
+@{
+    ViewData["Title"] = "Yönetmelik ve Yönergeler";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Yönetmelik ve Yönergeler
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid" id="bodykismi">
+        <h2 id="baslik1">Yönetmelik ve Yönergeler</h2>
+        <br /><br />
+
+        <p style="font-weight:600;">
+            Yönetmelikler
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.YonetmelikVeYonergelerKategori.Kategori == "Yönetmelikler")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Tarih.ToString("d") - @item.Aciklama</a>
+                            @* .ToString("d") kısa tarih formatı için *@
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            Yönergeler
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.YonetmelikVeYonergelerKategori.Kategori == "Yönergeler")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Tarih.ToString("d") - @item.Aciklama</a>
+                            @* .ToString("d") kısa tarih formatı için *@
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <p style="font-weight:600;">
+            Uygulama Esasları
+        </p>
+        <ul>
+            @{
+                @foreach (var item in Model)
+                {
+                    if (item.YonetmelikVeYonergelerKategori.Kategori == "Uygulama Esasları")
+                    {
+                        <li>
+                            <a href="@item.Link" target="_blank" id="butcelink">@item.Tarih.ToString("d") - @item.Aciklama</a>
+                            @* .ToString("d") kısa tarih formatı için *@
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <br />
+        <br />
+
+
+    </div>
+
+
+</body>
+</html>

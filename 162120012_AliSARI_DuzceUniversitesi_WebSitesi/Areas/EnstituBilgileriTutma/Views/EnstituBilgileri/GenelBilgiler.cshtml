@@ -1,0 +1,70 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.GenelBilgiler>
+@{
+    var enstitu = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Enstitu)ViewBag.Enstituler;
+}
+@* burasıı enstitülerin genel bilgileri sayfası  *@
+<html>
+<head>
+
+</head>
+<body>
+
+    <h2 id="genelbilgilerbaslik1">Genel Bilgiler</h2>
+    @foreach (var item in Model)
+    {
+        <p style="font-weight:600;" id="genelbigilerresimbosluk">
+            <a href="@Html.DisplayFor(modelItem=>item.ResimUrl)" target="_blank">
+                <img src="@Html.DisplayFor(modelItem=>item.ResimUrl)" id="genelbilgilerresim" />
+            </a>
+            <br />
+        </p>
+        <h5 style="font-weight: 600;">Misyonumuz</h5>
+        <p>
+            @item.Misyonumuz
+        </p>
+
+        <h5 style="font-weight: 600;">Vizyonumuz</h5>
+        <p>
+            @item.Vizyonumuz
+        </p>
+
+        <h5 style="font-weight: 600;">Enstitümüz Hakkında</h5>
+        <p>
+            @item.Aciklama1
+        </p>
+        <p>
+            @item.Aciklama2
+        </p>
+        <p>
+            @item.Aciklama3
+        </p>
+        <p>
+            @item.Aciklama4
+        </p>
+        <p>
+            @item.Aciklama5
+        </p>
+
+
+
+        <h5 style="font-weight: 600;">@item.EkBaslik</h5>
+        <p>@item.EkAciklama1</p>
+        <p>@item.EkAciklama2</p>
+        <p>@item.EkAciklama3</p>
+        <p>@item.EkAciklama4</p>
+        <p>@item.EkAciklama5</p>
+        <p>@item.EkAciklama6</p>
+        <p>@item.EkAciklama7</p>
+        <p>@item.EkAciklama8</p>
+        <p>@item.EkAciklama9</p>
+        <p>@item.EkAciklama10</p>
+        <p>@item.EkAciklama11</p>
+        <p>@item.EkAciklama12</p>
+
+    }
+
+
+
+
+</body>
+</html>

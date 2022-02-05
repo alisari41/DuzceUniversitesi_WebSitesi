@@ -1,0 +1,57 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Kullanici
+
+@{
+    ViewData["Title"] = "Üye Silme İşlemleri";
+}
+
+<h3 style="font-weight:bold">Bu kullanıcıyı silmek istediğinizden emin misiniz ?</h3>
+
+<div style="margin-left:25px">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Adı
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+        <dt class="col-sm-3">
+            Soyadı
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Soyad)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-3">
+            Telefon Numarası
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Sifre)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+        <dt class="col-sm-3">
+            TC Kimlik Numarası
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TCKimlikNumarasi)
+        </dd>
+    </dl>
+    <form asp-action="Delete" asp-controller="Kullanici">
+        <div class="form-actions no-color">
+            <a asp-action="Index" asp-controller="Kullanici" class="btn btn-default fa fa-backward detaylamabuton col-sm-2" style="margin-left: 2px; border: 2px solid green;"> Geri Dön</a>
+            <input type="hidden" asp-for="ID" />
+            <button type="submit" class="btn btn-default fas fa-trash-alt silmebuton col-sm-2" style="margin-left:98px;border: 2px solid red;">&nbsp; Sil</button>
+        </div>
+    </form>
+</div>

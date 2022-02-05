@@ -1,0 +1,102 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Sayilar
+
+@{
+    ViewData["Title"] = "Sayılar Detay";
+}
+
+<h2> Sayılar Detay</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.FakulteSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.FakulteSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EnstituSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.EnstituSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.YuksekOkulSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.YuksekOkulSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.MeslekYuksekOkulSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.MeslekYuksekOkulSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.LisansProgramiSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.LisansProgramiSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.LisansUstuProgramSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.LisansUstuProgramSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.UygulamaArastirmaMerkeziSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.UygulamaArastirmaMerkeziSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.KordinatorlukSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.KordinatorlukSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TubitakProjeSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.TubitakProjeSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.BAPProjesiSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.BAPProjesiSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.SponsorluProjeSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.SponsorluProjeSayisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.PatentSayisi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.PatentSayisi)
+        </dd>
+    </dl>
+</div>
+<br />
+<p style="margin-left:55px;">
+    <a asp-action="Index" class="btn btn-default fa fa-backward detaylamabuton" style="margin-left: 5px; border: 2px solid #39ded8;"> Geri Dön</a>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class=" btn btn-default fas fa-edit guncellemebuton" style="margin-left: 140px; border: 2px solid #4db3ff;">Güncelle</a>
+</p>
+
+<style>
+    .col-sm-3 {
+        margin-bottom: 10px;
+        margin-left: 8px
+    }
+
+    .col-sm-8 {
+        margin-bottom: 10px;
+    }
+</style>

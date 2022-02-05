@@ -1,0 +1,32 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.YonetimKategori
+
+@{
+    ViewData["Title"] = "Yöenetim Kategori Görevi Güncelleme";
+}
+
+
+
+<h2>Yönetim Kategori Görevi Güncelleme</h2>
+<hr />
+
+
+<form asp-action="Edit" asp-controller="YonetimKategori" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Görevi</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Gorevi" class="form-control text-info" />
+            <span asp-validation-for="Gorevi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default fas fa-edit guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">Güncelle</button>
+        </div>
+    </div>
+</form>
+
+<a asp-action="Index" asp-controller="YonetimKategori" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

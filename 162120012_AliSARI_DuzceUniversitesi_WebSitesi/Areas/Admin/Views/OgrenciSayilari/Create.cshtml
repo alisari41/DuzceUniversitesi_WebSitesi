@@ -1,0 +1,55 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.OgrenciSayilari
+
+@{
+    ViewData["Title"] = "Öğrenci Sayısı Ekle";
+}
+
+
+<br />
+<h2>Fakülte Öğrenci Sayısı Ekle</h2>
+<hr />
+
+<form asp-action="Create" asp-controller="OgrenciSayilari" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Öğrenim Düzeyi</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="OgrenimDuzeyi" class="form-control text-info" />
+            <span asp-validation-for="OgrenimDuzeyi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Akademik Birimi</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="AkademikBirim" class="form-control text-info" />
+            <span asp-validation-for="AkademikBirim" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Kadın Sayısı</label>
+        <div class="col-md-9">
+            <input type="number" asp-for="KadinSayisi" class="form-control text-info" />
+            <span asp-validation-for="KadinSayisi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Erkek Sayısı</label>
+        <div class="col-md-9">
+            <input type="number" asp-for="ErkekSayisi" class="form-control text-info" />
+            <span asp-validation-for="ErkekSayisi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                </svg>&nbsp; Fakülte Öğrenci Sayısı Ekle
+            </button>
+        </div>
+    </div>
+</form>
+<a asp-action="Index" asp-controller="OgrenciSayilari" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

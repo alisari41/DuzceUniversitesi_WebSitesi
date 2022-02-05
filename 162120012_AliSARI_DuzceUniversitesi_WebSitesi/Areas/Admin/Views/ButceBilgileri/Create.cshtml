@@ -1,0 +1,44 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.ButceBilgileri
+
+@{
+    ViewData["Title"] = "Bütçe Bilgisi Ekle";
+}
+
+<br />
+<h2>Bütçe Bilgisi Ekle</h2>
+<hr />
+
+<form asp-action="Create" asp-controller="ButceBilgileri" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Yıl</label>
+        <div class="col-md-9">
+            <select asp-for="ButceBilgileriKategoriID" class="form-control text-info" asp-items="ViewBag.ButceBilgileriKategoriID"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama" class="form-control text-info" />
+            <span asp-validation-for="Aciklama" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Link</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Link" class="form-control text-info" />
+            <span asp-validation-for="Link" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default bi bi-folder-plus guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                &nbsp; Bütçe Bilgisi Ekle
+            </button>
+        </div>
+    </div>
+</form>
+
+<a asp-action="Index" asp-controller="ButceBilgileri" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

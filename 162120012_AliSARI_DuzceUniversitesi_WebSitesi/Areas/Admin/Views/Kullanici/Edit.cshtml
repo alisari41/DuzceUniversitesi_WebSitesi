@@ -1,0 +1,70 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Kullanici
+
+@{
+    ViewData["Title"] = "Üye Güncelleme İşlemi";
+}
+
+<h2>Üye Güncelle</h2>
+<hr />
+
+<form asp-action="Edit" asp-controller="Kullanici" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Adı</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Ad" class="form-control text-info" />
+            <span asp-validation-for="Ad" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Soyadı</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Soyad" class="form-control text-info" />
+            <span asp-validation-for="Soyad" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Email</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Email" class="form-control text-info" placeholder="alisari41@outlook.com" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Telefon Numarası</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Telefon" class="form-control text-info" placeholder="05340829924" />
+            <span asp-validation-for="Telefon" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Şifre</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Sifre" class="form-control text-info" />
+            <span asp-validation-for="Sifre" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">TC Kimlik Numarası</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="TCKimlikNumarasi" class="form-control text-info" />
+            <span asp-validation-for="TCKimlikNumarasi" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default fas fa-edit guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">Güncelle</button>
+        </div>
+    </div>
+</form>
+
+<a asp-action="Index" asp-controller="Kullanici" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

@@ -1,0 +1,86 @@
+﻿.col-md-3 .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+
+.col-md-3 .card {
+    /*margin:15px;*/
+    border-radius: 10px 10px 10px 10px; /*etrafını oval yapma*/
+    margin: 20px 0px 20px 0px; /*#612929*/
+    box-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    /*border: 2px solid #c21e16;*/
+    /*padding: 10px;*/
+    height: 520px;
+}
+
+.col-md-4 #rektoryrdcard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.col-md-4 #rektoryrdcard {
+    border-radius: 10px 10px 10px 10px; /*etrafını oval yapma*/
+    margin: 20px 0px 20px 0px; /*#612929*/
+    box-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    height:380px;
+}
+
+.guncellemebuton {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    color: green;
+}
+
+    .guncellemebuton:hover {
+        background-color: green;
+        color: white;
+    }
+
+.detaylamabuton {
+    -webkit-transition-duration: 0.4s;
+    color: white;
+    background-color: #4b62f7;
+    transition-duration: 0.4s;
+}
+
+    .detaylamabuton:hover {
+        background-color: white;
+        color: blue;
+    }
+
+.card-header {
+    font-weight: bold;
+    text-align: center;
+    color: #369998;
+    font-size: 18px;
+    height: 50px;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #c21e16;
+    text-align: center;
+}
+
+.card .para {
+    font-weight: bold;
+    margin-left: 0px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(128, 128, 128, 0.2);
+    font-size: 20px;
+    border-radius: 10px 10px 10px 10px; /*etrafını oval yapma*/
+}
+
+.rektoryrdtitle {
+    font-weight: bold;
+    color: #4b62f7;
+    text-align: center;
+    font-size: 24px;
+}
+
+.card .aciklama {
+    font-weight: bold;
+    margin-left: 20px;
+    color: rgba(3, 5, 2, 0.56);
+}

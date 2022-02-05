@@ -1,0 +1,128 @@
+﻿@page "/blazoradmin/DeleteDuyuru/{CurrentID}"
+
+@using _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models;
+@using Microsoft.AspNetCore.Components.Web
+@inject DuyuruService objDyuruService
+@inject NavigationManager NavigationManager
+
+<h2>Duyuru Sil</h2>
+<hr />
+<h3 style="font-weight:bold">Bu duyuruyu silmek istediğinizden emin misiniz ?</h3>
+<div class="row">
+    <div class="col-md-8">
+        <div class="form-group">
+            <label>KategoriID:</label>
+            <label>@objduyuru.ID</label>
+        </div>
+        <div class="form-group">
+            <label>Duyuru Kategori:</label>
+            <label>@objduyuru.DuyuruKategori</label>
+        </div>
+        <div class="form-group">
+            <label>Baslik:</label>
+            <label>@objduyuru.Baslik</label>
+        </div>
+        <div class="form-group">
+            <label>Icerik:</label>
+            <label>@objduyuru.Icerik</label>
+        </div>
+        <div class="form-group">
+            <label>Tarih:</label>
+            <label>@objduyuru.Tarih</label>
+        </div>
+        <div class="form-group">
+            <label>AktifMi:</label>
+            <label>@objduyuru.AktifMi</label>
+        </div>
+        <div class="form-group">
+            <label>Aciklama1:</label>
+            <label>@objduyuru.Aciklama1</label>
+        </div>
+        <div class="form-group">
+            <label>Aciklama2:</label>
+            <label>@objduyuru.Aciklama2</label>
+        </div>
+        <div class="form-group">
+            <label>Aciklama3:</label>
+            <label>@objduyuru.Aciklama3</label>
+        </div>
+        <div class="form-group">
+            <label>Aciklama4:</label>
+            <label>@objduyuru.Aciklama4</label>
+        </div>
+        <div class="form-group">
+            <label>Aciklama5:</label>
+            <label>@objduyuru.Aciklama5</label>
+        </div>
+        <div class="form-group">
+            <label>Aciklama6:</label>
+            <label>@objduyuru.Aciklama6</label>
+        </div>
+        <div class="form-group">
+            <label>Aciklama4:</label>
+            <label>@objduyuru.Aciklama4</label>
+        </div>
+        <div class="form-group">
+            <label>ResimUrl1:</label>
+            <label>@objduyuru.ResimUrl1</label>
+        </div>
+        <div class="form-group">
+            <label>ResimUrl2:</label>
+            <label>@objduyuru.ResimUrl2</label>
+        </div>
+        <div class="form-group">
+            <label>ResimUrl3:</label>
+            <label>@objduyuru.ResimUrl3</label>
+        </div>
+        <div class="form-group">
+            <label>ResimUrl4:</label>
+            <label>@objduyuru.ResimUrl4</label>
+        </div>
+        <div class="form-group">
+            <label>ResimUrl5:</label>
+            <label>@objduyuru.ResimUrl5</label>
+        </div>
+        <div class="form-group">
+            <label>ResimUrl6:</label>
+            <label>@objduyuru.ResimUrl6</label>
+        </div>
+        <div class="form-group">
+            <label>ResimUrl7:</label>
+            <label>@objduyuru.ResimUrl7</label>
+        </div>
+        <div class="form-group">
+            <label>ResimUrl8:</label>
+            <label>@objduyuru.ResimUrl8</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <input type="button" class="btn btn-danger" @onclick="@DeleteDuyuruu" value="Sil" />
+            <input type="button" class="btn btn-primary" @onclick="@Cancel" value="Cancel" />
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string CurrentID { get; set; }
+
+    Duyurular objduyuru = new Duyurular();
+
+    protected override async Task OnInitializedAsync()
+    {
+        objduyuru = await Task.Run(() => objDyuruService.GetDuyuruById(Convert.ToInt32(CurrentID)));
+    }
+
+    protected void DeleteDuyuruu()
+    {
+        objDyuruService.DeleteDuyuru(objduyuru);
+        NavigationManager.NavigateTo("/blazoradmin/Duyuruu");
+    }
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("/blazoradmin/Duyuruu");
+    }
+}

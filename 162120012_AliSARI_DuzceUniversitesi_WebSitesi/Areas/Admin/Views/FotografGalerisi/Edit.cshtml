@@ -1,0 +1,51 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.FotografGalerisi
+
+@{
+    ViewData["Title"] = "Fotoğraf Güncelleme İşlemleri";
+}
+
+<h2>Fotoğraf Güncelle</h2>
+<hr />
+
+<form class="form-group" asp-action="Edit" asp-controller="FotografGalerisi" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Fotoğraf</label>
+        <div class="col-md-9">
+            @*<input type="text" asp-for="FotografAdı" class="form-control text-info" />*@
+            <select asp-for="FotografAdı" asp-validation-for="FotografAdı" class="form-control text-info">
+                <option value="">--Seçiniz--</option>
+                <option value="Ana Sayfada Gözükecek">Ana Sayfada Gözüksün</option>
+                <option value="Ana Sayfada Gözükmeyecek">Ana Sayfada Gözükmesin</option>
+            </select>
+        </div>
+    </div>
+    <img src="~/resimler/@Html.DisplayFor(model=>model.Image)" id="rektorresim" style="height:400px;width:100%" />
+    @*@Model.Image=@Html.DisplayFor(model => model.Image)*@
+    @*<div class="form-group">
+            <label class="control-label col-md-3">Resim Ekle</label>
+            <div class="col-md-9">
+                <input type="file" name="Image" asp-for="Image" class="form-control text-info" />
+            </div>
+        </div>*@
+    <div class="form-group">
+        <label class="control-label col-md-3">Fotoğraf</label>
+        <div class="col-md-9">
+            @*<input type="text" asp-for="FotografAdı" class="form-control text-info" />*@
+            <select asp-for="Image" asp-validation-for="Image" class="form-control text-info">
+                <option value="@Model.Image">@Model.Image</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default bi bi-megaphone guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                &nbsp; Fotoğrafı Güncelle
+            </button>
+        </div>
+    </div>
+</form>
+
+<a asp-action="Index" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

@@ -1,0 +1,48 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.IsAkisSemalari>
+@{
+    var fakulte = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Fakulte)ViewBag.Fakulteler;
+    var bolumler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Bolum)ViewBag.Bolumler;
+}
+@* burasıı fakultelerin iş akış şemaları sayfası  *@
+<html>
+<head>
+
+</head>
+<body>
+    <h2 id="genelbilgilerbaslik1">İş Akış Şemaları</h2>
+    <br />
+
+    <div class="table-responsive">
+        <table class="table table-hover table-sm table-bordered" id="bolumveanabilimfakulte">
+            <thead>
+
+                <tr>
+                    <td style="text-align:center" colspan="2" height="20">
+                        <strong>
+                            İş Akış Şemaları
+                        </strong>
+                    </td>
+                </tr>
+            </thead>
+
+            @{
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="width: 320px;"> @*font-weight:bold;*@
+                                @item.Departman
+                            </td>
+                            <td style="width:500px">
+                                <a href="@item.Link" target="_blank" id="butcelink">@item.Aciklama</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            }
+        </table>
+    </div>
+    <br />
+</body>
+</html>

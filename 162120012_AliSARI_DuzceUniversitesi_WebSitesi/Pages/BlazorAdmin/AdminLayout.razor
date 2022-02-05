@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+@using Microsoft.AspNetCore.Components.Routing
+<div class="bg-info text-white p-2 ">
+    <span class="navbar-brand ml-2 ">Düzce Üniversitesi Admin Sayfası</span>   
+</div>
+<div class="container-fluid">
+    <div class="row p-2 ">
+        <div class="col-sm-12 col-md-3 ">            
+            <NavLink class="btn btn-outline-primary btn-block" href="/blazoradmin/Duyuruu" ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">
+                Duyurular
+            </NavLink>
+            <NavLink class="btn btn-outline-primary btn-block" href="/blazoradmin/Sayilarr" ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">
+                Sayılar
+            </NavLink>
+            @*<NavLink class="btn btn-outline-primary btn-block" href="/blazoradmin/FotografGalerisii" ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">
+                Fotoğraf Galerisi
+            </NavLink>*@
+            <NavLink class="btn btn-outline-primary btn-block" href="/admin" ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">
+                Düzce Üniversitesi Yönetici Paneli
+            </NavLink>
+        </div>
+        <div class="col-sm-12 col-md-9">            
+            @Body
+        </div>
+    </div>    
+</div>

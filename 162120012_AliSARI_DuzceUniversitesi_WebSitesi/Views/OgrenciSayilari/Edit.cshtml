@@ -1,0 +1,49 @@
+﻿@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.OgrenciSayilari
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>OgrenciSayilari</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="OgrenimDuzeyi" class="control-label"></label>
+                <input asp-for="OgrenimDuzeyi" class="form-control" />
+                <span asp-validation-for="OgrenimDuzeyi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AkademikBirim" class="control-label"></label>
+                <input asp-for="AkademikBirim" class="form-control" />
+                <span asp-validation-for="AkademikBirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KadinSayisi" class="control-label"></label>
+                <input asp-for="KadinSayisi" class="form-control" />
+                <span asp-validation-for="KadinSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ErkekSayisi" class="control-label"></label>
+                <input asp-for="ErkekSayisi" class="form-control" />
+                <span asp-validation-for="ErkekSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

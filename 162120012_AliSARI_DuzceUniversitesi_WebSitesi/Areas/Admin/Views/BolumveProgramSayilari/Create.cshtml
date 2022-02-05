@@ -1,0 +1,51 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.BolumveProgramSayilari
+
+@{
+    ViewData["Title"] = "Bölüm Program Sayısı Ekle";
+}
+
+<br />
+<h2>Bölüm Program Sayısı Ekle</h2>
+<hr />
+
+<form asp-action="Create" asp-controller="BolumveProgramSayilari" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Program Türü</label>
+        <div class="col-md-9">
+            <select asp-for="BolumveProgramSayilariKategoriID" class="form-control text-info" asp-items="ViewBag.BolumveProgramSayilariKategoriID"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Fakülte</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Fakulte" class="form-control text-info" />
+            <span asp-validation-for="Fakulte" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Öğrenim Türü</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="OgrenimTuru" class="form-control text-info" />
+            <span asp-validation-for="OgrenimTuru" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Sayısı</label>
+        <div class="col-md-9">
+            <input type="number" asp-for="Sayisi" class="form-control text-info" />
+            <span asp-validation-for="Sayisi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default bi bi-folder-plus guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                &nbsp; Bölüm Program Sayısı Ekle
+            </button>
+        </div>
+    </div>
+</form>
+
+<a asp-action="Index" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

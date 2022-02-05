@@ -1,0 +1,67 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Kullanici
+
+@{
+    ViewData["Title"] = "Üye Detay";
+}
+
+<h2>Üye Detayları</h2>
+<hr />
+
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">
+            Adı
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+        <dt class="col-sm-3">
+            Soyadı
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Soyad)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-3">
+            Telefon Numarası
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Sifre)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+        <dt class="col-sm-3">
+            TC Kimlik Numarası
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.TCKimlikNumarasi)
+        </dd>
+    </dl>
+</div>
+<br />
+<p style="margin-left:55px;">
+    <a asp-action="Index" asp-controller="Kullanici" class="btn btn-default fa fa-backward detaylamabuton" style="margin-left: 5px; border: 2px solid #39ded8;"> Geri Dön</a>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class=" btn btn-default fas fa-edit guncellemebuton" style="margin-left: 140px; border: 2px solid #4db3ff;">Güncelle</a>
+</p>
+
+<style>
+    .col-sm-3 {
+        margin-bottom: 10px;
+        margin-left: 8px
+    }
+
+    .col-sm-8 {
+        margin-bottom: 10px;
+    }
+</style>

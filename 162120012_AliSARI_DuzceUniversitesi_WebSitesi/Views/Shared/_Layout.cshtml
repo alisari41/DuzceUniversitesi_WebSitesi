@@ -1,0 +1,491 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Düzce Üniversitesi</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="~/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/AnasayfaIslemleri/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="~/AnasayfaIslemleri/css.min.css?Version=9" />
+    <link rel="stylesheet" type="text/css" href="~/css/style.css?Version=22" />
+    @* CSS'i kaydederken href en sonda olucak en sonunada ?Version=1 yazmak zoundayım yoksa çalışmıyor *@
+    @* CSS'te her değişiklik yaptığımda ?Version="..." nokta noktadaki sayı bir artar' *@
+
+</head>
+<body>
+    <header>
+        <!-- Top Bar Start -->
+        <div class="top-bar d-none d-md-block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="top-bar-left">
+                            <div class="text">
+                                <a href="/">  <h2>Çevre ve Sağlık Alanında İhtisas Üniversitesi</h2>   </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="top-bar-right">
+                            <div class="social">
+                                <a href="">Personel&nbsp;&nbsp;</a>
+                                <a href="">Öğrenci&nbsp;&nbsp;</a>
+                                <a href="">Hastane&nbsp;&nbsp;</a>
+                                <a href="">Teknopark&nbsp;&nbsp;</a>
+
+                                @* Hızlı Erişim DropDown Menü *@
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hızlı Erişim</a>
+                                    <div class="dropdown-menu">
+                                        <a href="" class="dropdown-item">EBYS</a>
+                                        <a href="" class="dropdown-item">ÖBYS / KBYS</a>
+                                        <a href="" class="dropdown-item">Rehber</a>
+                                        <a href="" class="dropdown-item">E-Mail</a>
+                                        <a href="" class="dropdown-item">Kütüphane</a>
+                                        <a href="" class="dropdown-item">UZEM</a>
+                                        <a href="" class="dropdown-item">Havuz</a>
+                                        <a href="" class="dropdown-item">Staj</a>
+                                        <a href="" class="dropdown-item">Yemek Menüsü</a>
+                                    </div>
+                                </div>
+
+
+
+                                <a href="">Sanat Galerisi&nbsp;&nbsp;</a>
+                                <a href="">Mezunlar&nbsp;&nbsp;</a>
+                                <a href="/Dukkans" id="dukkan">
+                                    @* Dükkan *@
+                                    &nbsp;  <img src="https://duzce.edu.tr/Content/theme-v2/img/dukkan.png" style="max-width:64px;max-height:64px" />
+                                    &nbsp;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End -->
+        <!-- Nav Bar Start -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+            <a href="/">
+                <img src="https://i.hizliresim.com/yik8djy.png" alt="" id="duzcelogo" style="max-width: 175px;" class="img-fluid mb-6 rounded">
+            </a>
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Üniversitemiz</a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a asp-action="Duzce" asp-controller="Universitemiz" class="dropdown-item">Düzce</a>
+                            </li>
+                            <li>
+                                <a asp-action="Kurulus" asp-controller="Universitemiz" class="dropdown-item">Kuruluş</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Yönetim</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-action="Rektor" asp-controller="Yonetimler" class="dropdown-item">Rektör</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="RektorYardimcisi" asp-controller="Yonetimler" class="dropdown-item">Rektör Yardımcıları</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="SenatoKurulu" asp-controller="Yonetimler" class="dropdown-item">Senato Kurulu</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="YonetimKurulu" asp-controller="Yonetimler" class="dropdown-item">Yönetim Kurulu</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="GenelSekreter" asp-controller="Yonetimler" class="dropdown-item">Genel Sekreter</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://cdn.duzce.edu.tr/File/GetFile/03869186-84f4-4f6d-81e0-cbcc4412b10c" target="_blank">Senato ve Yönetim Kurulu Kararlarımız</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="http://kurulkararlari.duzce.edu.tr/Main/Goruntule" target="_blank">Teşkilat Şeması</a></li>
+                                    <li>
+                                        <a asp-action="KurucuRektorumuz" asp-controller="Yonetimler" class="dropdown-item">Kurucu Rektörümüz</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Sayılarla DÜ</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-action="Index" asp-controller="OgrenciSayilari" class="dropdown-item">Ögrenci Sayıları</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="PersonelSayilari" class="dropdown-item">Personel Sayıları</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="BolumveProgramSayilari" class="dropdown-item">Bölüm ve Program Sayıları</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="ProjeSayilari" asp-controller="SayilarDU" class="dropdown-item">Proje Sayıları</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="FikriMulkiyet" asp-controller="SayilarDU" class="dropdown-item">Fikri Mülkiyet</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="UniversiteIzlemeveDgrRapor" class="dropdown-item">Üniversite İzleme ve Değerlendirme Raporu</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="ButceBilgileri" class="dropdown-item">Bütçe</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Sıralamalar</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-action="URAP" asp-controller="Siralamalar" class="dropdown-item">URAP</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="THE" asp-controller="Siralamalar" class="dropdown-item">THE</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="GirisimcilikEndeksi" asp-controller="Siralamalar" class="dropdown-item">Girişimcilik Endeksi</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="GreenMetric" asp-controller="Siralamalar" class="dropdown-item">Green Metric</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="InnovaLig" asp-controller="Siralamalar" class="dropdown-item">İnnovaLig</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a asp-action="Index" asp-controller="Ilkler" class="dropdown-item">İlkler</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Kurumsal Strateji</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-action="Index" asp-controller="StratejikPlanRaporlari" class="dropdown-item">Stratejik Plan Raporları</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="KalitePolitikamiz" asp-controller="KurumsalStrateji" class="dropdown-item">Kalite Politikamız</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="SurdurulebilirlikRaporu" asp-controller="KurumsalStrateji" class="dropdown-item">Sürdürülebilirlik Raporu</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="KurumIcDegerlendirmeRaporlari" class="dropdown-item">Kurum İç Değerlendirme Raporları</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Kampüs Yaşamı</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-action="BeslenmeHizmetleri" asp-controller="KampüsYasami" class="dropdown-item">Beslenme Hizmetleri</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="SporHizmetleriBirimi" asp-controller="KampüsYasami" class="dropdown-item">Spor Hizmetleri Birimi</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="Ulasim" asp-controller="KampüsYasami" class="dropdown-item">Ulaşım</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="Barinma" asp-controller="KampüsYasami" class="dropdown-item">Barınma</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a asp-action="Index" asp-controller="Isbirlikleri" class="dropdown-item">İşbirlikleri</a>
+                            </li>
+                            <li>
+                                <a asp-action="Index" asp-controller="FotografGalerisi" class="dropdown-item">Tanıtım Filmleri/Fotoğraf Galerisi</a>
+                            </li>
+                            <li>
+                                <a asp-action="Index" asp-controller="YonetmelikVeYonergeler" class="dropdown-item">Yönetmelik ve Yönergeler</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Akademik</a>
+
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Fakülteler</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        @await Component.InvokeAsync("FakulteleriListele")
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Enstitüler</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        @await Component.InvokeAsync("EnstituleriListele")
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Yüksekokullar</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Akçakoca Turizm İşl. ve O.Y.O.</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Hakime ERCİYAS Yabancı Diller Yüksekokulu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Meslek Yüksekokulları</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Akçakoca MYO</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Çilimli MYO</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Düzce MYO</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Dr. Engin PAK Cumayeri MYO</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Gölyaka MYO</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Kaynaşlı MYO</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Ormancılık MYO</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Sağlık Hizmetleri MYO</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Sosyal Bilimler MYO</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Kurullar</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Bölüm Başkanlıkları</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Atatürk İlkeleri ve İnkılap Tarihi Bölümü</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="" asp-controller="" class="dropdown-item">Türk Dili</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Araştırma</a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Araştırma Merkezleri</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Laboratuvar Envanteri</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Yayınlar Projeler</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Hakemli Dergiler</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Teknoloji Transfer Ofisi</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">İhtisaslaşma</a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Program Kapsamı</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Tıbbi Bitki Yetiştiriciliği</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Ürünler/Markalar</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Üretim Merkezi</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Geleneksel ve Tamamlayıcı Tıp Faaliyetleri</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Tarımsal Atıkların Geri Kazanımı Faaliyetleri</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Arıcılık / Arı Ürünleri</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Bilimsel Yayınlar</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">İşbirlikleri</a>
+                            </li>
+                            <li>
+                                <a asp-action="" asp-controller="" class="dropdown-item">Etkinlikler</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <a href="" class="nav-item nav-link">DüYayınlar</a>
+                    <a href="/Home/Duyurular" class="nav-item nav-link">DÜDuyurular</a>
+                    <li>
+                        <a href="/Admin" class="nav-item nav-link" style=" text-decoration: none;"> Yönetici Paneli</a>
+                    </li>
+                    @*<li>
+                            <a href="/Admin" class="nav-item nav-link" style=" text-decoration: none;"> Yönetici Paneli</a>
+                        </li>*@
+                </ul>
+            </div>
+
+        </nav>
+        <!-- Nav Bar End -->
+    </header>
+    <div>
+        <main role="main" class="pb-3" style="min-height:780px;">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - _162120012_AliSARI_DuzceUniversitesi_WebSitesi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper flex container">
+            <div class="c-3 contact">
+                <p>ANA KAMPÜS</p>
+                <p>Düzce Üniversitesi Konuralp Yerleşkesi Yörük Mah. Merkez/DÜZCE, 81620</p>
+                <p>TEL : 0850 800 81 81 </p>
+                <p>FAKS: 0380 542 11 03</p>
+            </div>
+            <div class="c-3">
+                <div class="input-group">
+                    <i class="fa fa-search"></i>
+                    <input type="text" value="" placeholder="Arama" />
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-whatsapp"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="c-3 footer-image dn">
+                @*<img src="footer.png"  />*@
+            </div>
+        </div>
+        <div class="copyright">
+            © Copyright -
+            @*<a href="#">Düzce Üniversitesi</a>*@
+            <a href="">Ali SARI</a>
+            - 2022
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/lib/counterup/counterup.min.js"></script>
+
+    <script src="~/mail/jqBootstrapValidation.min.js"></script>
+    <script src="~/mail/contact.js"></script>
+    @*<script src="~/js/main.js"></script>*@
+    @* MAİN.JS yorum satırı *@
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 0) {
+                $('.navbar').addClass('nav-sticky');
+            } else {
+                $('.navbar').removeClass('nav-sticky');
+            }
+        });
+        $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+            if (!$(this).next().hasClass('show')) {
+                $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+            }
+            var $subMenu = $(this).next('.dropdown-menu');
+            $subMenu.toggleClass('show');
+
+
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+                $('.dropdown-submenu .show').removeClass('show');
+            });
+
+
+            return false;
+        });
+    </script>
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

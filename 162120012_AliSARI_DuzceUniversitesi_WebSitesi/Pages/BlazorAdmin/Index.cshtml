@@ -1,0 +1,20 @@
+﻿@page "/blazoradmin"
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blazor Admin</title>
+
+    <link rel="stylesheet" href="~/BlazorAdmin/css/bootstrap/bootstrap.min.css" />
+
+    <link href="~/BlazorAdmin/css/site.css" rel="stylesheet" />
+    <link href="BlazorAdmin.styles.css" rel="stylesheet" />
+    <base href="/" />
+</head>
+<body>
+    <component type="typeof(Routed)" render-mode="Server" />
+    <script src="/_framework/blazor.server.js"></script>
+</body>
+</html>

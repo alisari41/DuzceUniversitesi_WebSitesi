@@ -1,0 +1,68 @@
+﻿@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Dukkan>
+
+@{
+    ViewData["Title"] = "Dükkan";
+}
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="~/css/DukkanStyle.css?Version=7" />
+</head>
+<body>
+    <div class="ustkisim  row">
+        <div class="col-sm-6 ">
+            <div class="baslik">Düzce Üniversitesi</div>
+            <ol class="breadcrumb icerik">
+                <li class="breadcrumb-item ">
+                    <a href="/" class="icerikilk">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Dükkan
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-sm-6" style="text-align:right">
+            <div>&nbsp;</div>
+            <i class="fa fa-search"></i>
+            <input class="arama" type="text" value="" placeholder="Arama">
+        </div>
+    </div>
+    <div class="container-fluid" id="bodykismi">
+        <div class="row">
+            <h2 id="baslik1">Dükkan</h2>
+            <p>
+                Üniversitemiz markalı ürünlerinin satışa sunulduğu DÜKKAN mağazası, Konuralp Yerleşkesi Atattürk Eğitim ve Kültür Merkezi giriş bölümünde 2018 yılında faaliyetine başladı. Birçok ürün grubunun yer aldığı DÜKKAN mağazası ile Üniversitemiz markalı ve logolu tanıtım ürünleri, öğrenciler başta olmak üzere tüm mensuplar için satışa sunuldu.
+            </p>
+            <p>
+                Üniversitemizde ilk kez hayata geçirilen ve 2020 yılı Ocak ayından itibaren her ayın ilk Cuma’sı olarak uygulanan “Logo Günü” ile de kurumsal kimlik alanında farkındalık oluşturmaktadır. Logo gününde Üniversitemiz öğrencileri ve personelleri Üniversitemize ait logolu kıyafetleri giyerek, yine logolu ürünleri ve aksesuarları kullanarak kurumsal kimlik ve kurum aidiyeti konusunda bilinç oluşturulmasına katkı sağlamaktadır.
+            </p>
+            @{
+                foreach (var item in Model)
+                {    /*Dükkan*/
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="card mb-4">
+                            <div class="card-header">@item.Baslık</div>
+                            <img class="card-img-top " width="100%" src="@item.ResimUrl" alt="Card image cap" height="300">
+
+                            <div class="card-body ">
+                                <div class="card-body">
+                                    <h4 class="card-title">Renkler: <br /> @item.Renkler</h4>
+                                    <p class="para" style="text-align:center">
+                                        &nbsp;&nbsp;  @item.Fiyat.ToString("##,## ₺")
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+
+    </div>
+</body>
+</html>
+

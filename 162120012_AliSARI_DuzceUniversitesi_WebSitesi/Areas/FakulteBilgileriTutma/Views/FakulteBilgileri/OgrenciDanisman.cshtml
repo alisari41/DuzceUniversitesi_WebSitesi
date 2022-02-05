@@ -1,0 +1,74 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.OgrenciDanismanligi>
+@{
+    var fakulte = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Fakulte)ViewBag.Fakulteler;
+    var bolumler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Bolum)ViewBag.Bolumler;
+}
+@* burasıı fakultelerin genel bilgileri sayfası  *@
+<html>
+<head>
+
+</head>
+<body>
+
+    <h2 id="genelbilgilerbaslik1"> Öğrenci Danışmanlığı</h2>
+    <br />
+    <h5 style="font-weight: 600;">Değerli Öğrencilerimiz,</h5>
+    <p>
+        Danışman, lisans öğretimi boyunca öğrencinin başarı durumunu ve gelişimini izler. Öğretim programı çerçevesinde öğrencinin alması gereken zorunlu ve seçmeli derslerle ilgili olarak öğrenciye önerilerde bulunur. Öğrenciyi yönlendirir. Mezuniyeti için gerekli olan zorunlu ve seçmeli dersleri eksiksiz olarak Lisans Eğitim-Öğretim ve Sınav Yönetmeliği çerçevesinde almasını sağlar. Bölümler tarafından müfredatlarda yapılan değişiklikler nedeniyle uygulanan intibaklarda öğrencileri yönlendirir. Alacağı dersleri onaylar. Öğrencinin mesleki uygulamalara yönlendirilmesine katkıda bulunur. Daha iyi çalışmasına ve yetişmesine yönelik olarak öğrencinin karşılaştığı problemlerin çözümünü sağlar ve gerektiğinde ilgili mercilere iletilmesinde yardımcı olur.
+    </p>
+    <br /><br />
+
+    <div class="table-responsive">
+        <table class="table table-hover table-sm table-bordered" id="bolumveanabilimfakulte">
+            <thead>
+
+                <tr>
+                    <td style="text-align:center" colspan="3" height="20">
+                        <strong>
+                            ÖĞRENCİ DANIŞMANLIKLARI LİSTESİ
+                        </strong>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width:420px">
+                        Bölüm
+                    </th>
+                    <th style="width:111px">
+                        Sınıf
+                    </th>
+                    <th style="width:380px">
+                        Danışman
+                    </th>
+                </tr>
+            </thead>
+
+            @{
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td style="width:420px">
+                                @item.BolumAdi
+                            </td>
+                            <td style="width:111px">
+                                @item.Sinif
+                            </td>
+                            <td style="width:380px">
+                                @item.DanismanUnvan @item.DanismanAd @item.DanismanSoyad
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            }
+        </table>
+
+    </div>
+    <br />
+
+
+
+</body>
+</html>

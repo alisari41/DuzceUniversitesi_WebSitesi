@@ -1,0 +1,135 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.BolumGenelBilgileri
+
+@{
+    ViewData["Title"] = "Bölüm Genel bilgisi Ekle";
+}
+
+<br />
+<h2>Bölüm Genel Bigisi Ekle</h2>
+<hr />
+
+<form asp-action="Create" asp-controller="BolumGenelBilgileri" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Bölüm Adı</label>
+        <div class="col-md-9">
+            <select asp-for="BolumID" class="form-control text-info" asp-items="ViewBag.BolumID"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama1" class="form-control text-info" />
+            <span asp-validation-for="Aciklama1" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Aciklama2" class="control-label col-md-3"></label>
+        <div class="col-md-9">
+            <input asp-for="Aciklama2" class="form-control text-info" />
+            <span asp-validation-for="Aciklama2" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama3" class="form-control text-info" />
+            <span asp-validation-for="Aciklama3" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama4" class="form-control text-info" />
+            <span asp-validation-for="Aciklama4" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama5" class="form-control text-info" />
+            <span asp-validation-for="Aciklama5" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama6" class="form-control text-info" />
+            <span asp-validation-for="Aciklama6" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama7" class="form-control text-info" />
+            <span asp-validation-for="Aciklama7" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama8" class="form-control text-info" />
+            <span asp-validation-for="Aciklama8" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama9" class="form-control text-info" />
+            <span asp-validation-for="Aciklama9" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama10" class="form-control text-info" />
+            <span asp-validation-for="Aciklama10" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Açıklama</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Aciklama11" class="form-control text-info" />
+            <span asp-validation-for="Aciklama11" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Bologna Süreci Link</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="BolognaSureciLink" class="form-control text-info" />
+            <span asp-validation-for="BolognaSureciLink" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Email</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Email1" class="form-control text-info" />
+            <span asp-validation-for="Email1" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Email</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Email2" class="form-control text-info" />
+            <span asp-validation-for="Email2" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Email</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Email3" class="form-control text-info" />
+            <span asp-validation-for="Email3" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default bi bi-megaphone-fill guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                &nbsp; Bölüm Genel Bigisi Ekle
+            </button>
+        </div>
+    </div>
+</form>
+
+<a asp-action="Index" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

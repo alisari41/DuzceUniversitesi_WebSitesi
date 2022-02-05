@@ -1,0 +1,66 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.OgrenciDanismanligi
+
+@{
+    ViewData["Title"] = "Öğrenci Danışman Bilgi Detayları";
+}
+
+<h2>Öğrenci Danışman Bilgi Detayları</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Fakulte)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Fakulte.FakulteAdi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.BolumAdi)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.BolumAdi) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Sinif)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Sinif) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DanismanUnvan)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DanismanUnvan) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DanismanAd)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DanismanAd) &nbsp;
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DanismanSoyad)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DanismanSoyad) &nbsp;
+        </dd>
+    </dl>
+</div>
+<br />
+<p style="margin-left:55px;">
+    <a asp-action="Index" class="btn btn-default fa fa-backward detaylamabuton" style="margin-left: 5px; border: 2px solid #39ded8;"> Geri Dön</a>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class=" btn btn-default fas fa-edit guncellemebuton" style="margin-left: 140px; border: 2px solid #4db3ff;">Güncelle</a>
+</p>
+
+<style>
+    .col-sm-3 {
+        margin-bottom: 10px;
+        margin-left: 8px
+    }
+
+    .col-sm-8 {
+        margin-bottom: 10px;
+    }
+</style>

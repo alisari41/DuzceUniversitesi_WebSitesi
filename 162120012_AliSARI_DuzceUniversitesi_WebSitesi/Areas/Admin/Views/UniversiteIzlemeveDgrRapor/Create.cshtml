@@ -1,0 +1,43 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.UniversiteIzlemeveDgrRapor
+
+@{
+    ViewData["Title"] = "Üniversite İzleme ve Değerlendirme Rapor Ekle";
+}
+<br />
+<h2>Üniversite İzleme ve Değerlendirme Rapor Ekle</h2>
+<hr />
+
+<form asp-action="Create" asp-controller="UniversiteIzlemeveDgrRapor" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Kriterler Kategori</label>
+        <div class="col-md-9">
+            <select asp-for="UniversiteIzlemeveDgrRaporKategoriID" class="form-control text-info" asp-items="ViewBag.UniversiteIzlemeveDgrRaporKategoriID"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Kriterler</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Kriterler" class="form-control text-info" />
+            <span asp-validation-for="Kriterler" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Say/Oran</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="Say_Oran" class="form-control text-info" />
+            <span asp-validation-for="Say_Oran" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default bi bi-folder-plus guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                &nbsp; Üniversite İzleme ve Değerlendirme Rapor Ekle
+            </button>
+        </div>
+    </div>
+</form>
+<a asp-action="Index" asp-controller="UniversiteIzlemeveDgrRapor" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>

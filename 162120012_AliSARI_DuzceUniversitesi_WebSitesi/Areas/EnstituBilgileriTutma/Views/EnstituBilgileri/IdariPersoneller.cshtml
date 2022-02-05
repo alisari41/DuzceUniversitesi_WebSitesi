@@ -1,0 +1,44 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Personel>
+
+@{
+
+    var enstitu = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Enstitu)ViewBag.Enstituler;
+    var yonetimler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim)ViewBag.Yonetimler;
+}
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="~/css/IdariPersoneller.css?Version=2" />
+</head>
+<body>
+    <h2 id="genelbilgilerbaslik1">İdari Personel</h2>
+    <div class="row">
+
+        @{
+            foreach (var item in Model)
+            {
+                <div class="card text-white bg-info col-sm-6 col-md-3 " id="rektoryrdcard">
+                    <div class="card-header" style="text-align:center;color:white">@Html.DisplayFor(modelItem => item.Unvan)</div>
+                    <div class="card-body" style="color:white">
+                        <h5 class="card-title">
+                            <a asp-action="PersonelDetay" asp-route-id="@item.ID" asp-route-enstituid="@enstitu.ID" class="">@item.Ad @item.Soyad</a>
+                        </h5>
+                        <p class="card-text" style="color:white">
+                            @if (@item.PersonelLink == null)
+                            {
+
+                            }
+                            else
+                            {
+                                <a href="@item.PersonelLink" target="_blank">Akademik Düzce&#8217;deki Personelin Sayfası</a>
+                            }
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <br /><br /><br />
+</body>
+</html>

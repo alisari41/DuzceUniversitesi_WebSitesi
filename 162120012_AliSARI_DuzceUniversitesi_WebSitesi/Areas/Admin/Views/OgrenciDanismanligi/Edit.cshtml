@@ -1,0 +1,68 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.OgrenciDanismanligi
+
+@{
+    ViewData["Title"] = "Öğrenci Danışman Bilgisi Güncelle";
+}
+
+<h2>Öğrenci Danışman Bilgisi Güncelle</h2>
+<hr />
+
+<form asp-action="Edit" asp-controller="OgrenciDanismanligi" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+
+
+    <div class="form-group">
+        <label class="control-label col-md-3">Faküte Adı</label>
+        <div class="col-md-9">
+            <select asp-for="FakulteID" class="form-control text-info" asp-items="ViewBag.FakulteID"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Bölüm Adı</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="BolumAdi" class="form-control text-info" />
+            <span asp-validation-for="BolumAdi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Sınıf</label>
+        <div class="col-md-9">
+            <input type="number" asp-for="Sinif" class="form-control text-info" />
+            <span asp-validation-for="Sinif" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">
+            Danışman Ünvac
+        </label>
+        <div class="col-md-9">
+            <input type="text" asp-for="DanismanUnvan" class="form-control text-info" />
+            <span asp-validation-for="DanismanUnvan" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Danışman Adı</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="DanismanAd" class="form-control text-info" />
+            <span asp-validation-for="DanismanAd" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">Danışman Soyad</label>
+        <div class="col-md-9">
+            <input type="text" asp-for="DanismanSoyad" class="form-control text-info" />
+            <span asp-validation-for="DanismanSoyad" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-default bi bi-megaphone guncellemebuton" style="margin-left: 5px; border: 2px solid #4db3ff;">
+                &nbsp; Öğrenci Danışman Bilgisi Güncelle
+            </button>
+        </div>
+    </div>
+</form>
+<a asp-action="Index" class="btn btn-default fas fa-backward" style="color: green"> Geri Dön</a>
+

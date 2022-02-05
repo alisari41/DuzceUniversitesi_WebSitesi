@@ -1,0 +1,615 @@
+﻿
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+
+    var fakulte = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Fakulte)ViewBag.Fakulteler;
+    ViewData["Title"] = fakulte.FakulteAdi;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Düzce Üniversitesi</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="~/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" type="text/css" href="~/css/FakultelerStyle.css?Version=10" />
+
+    <link rel="stylesheet" href="~/css/versions.css?Version=11" />
+    @* CSS'i kaydederken href en sonda olucak en sonunada ?Version=1 yazmak zoundayım yoksa çalışmıyor *@
+    @* CSS'te her değişiklik yaptığımda ?Version="..." nokta noktadaki sayı bir artar' *@
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="fakulte_version">
+    <header>
+        <div class="top-bar d-none d-md-block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="top-bar-left">
+                            <div class="text">
+                                <a href="/">  <h2>Çevre ve Sağlık Alanında İhtisas Üniversitesi</h2>   </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="top-bar-right">
+                            <div class="social">
+                                <a href="">Personel&nbsp;&nbsp;</a>
+                                <a href="">Öğrenci&nbsp;&nbsp;</a>
+                                <a href="">Hastane&nbsp;&nbsp;</a>
+                                <a href="">Teknopark&nbsp;&nbsp;</a>
+
+                                @* Hızlı Erişim DropDown Menü *@
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hızlı Erişim</a>
+                                    <div class="dropdown-menu">
+                                        <a href="" class="dropdown-item">EBYS</a>
+                                        <a href="" class="dropdown-item">ÖBYS / KBYS</a>
+                                        <a href="" class="dropdown-item">Rehber</a>
+                                        <a href="" class="dropdown-item">E-Mail</a>
+                                        <a href="" class="dropdown-item">Kütüphane</a>
+                                        <a href="" class="dropdown-item">UZEM</a>
+                                        <a href="" class="dropdown-item">Havuz</a>
+                                        <a href="" class="dropdown-item">Staj</a>
+                                        <a href="" class="dropdown-item">Yemek Menüsü</a>
+                                    </div>
+                                </div>
+
+
+
+                                <a href="">Sanat Galerisi&nbsp;&nbsp;</a>
+                                <a href="">Mezunlar&nbsp;&nbsp;</a>
+                                <a href="/Dukkans" id="dukkan">
+                                    @* Dükkan *@
+                                    &nbsp;  <img src="https://duzce.edu.tr/Content/theme-v2/img/dukkan.png" style="max-width:64px;max-height:64px" />
+                                    &nbsp;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar Bitti -->
+        <!-- Nav Bar Başlangıç -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+            <a href="/">
+                <img src="https://i.hizliresim.com/yik8djy.png" alt="" id="duzcelogo" style="max-width: 175px;" class="img-fluid mb-6 rounded">
+            </a>
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Üniversitemiz</a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/Universitemiz/Duzce" class="dropdown-item">Düzce</a>
+                            </li>
+                            <li>
+                                <a href="/Universitemiz/Kurulus" class="dropdown-item">Kuruluş</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Yönetim</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/Yonetimler/Rektor">Rektör</a></li>
+                                    <li><a class="dropdown-item" href="/Yonetimler/RektorYardimcisi">Rektör Yardımcıları</a></li>
+                                    <li><a class="dropdown-item" href="/Yonetimler/SenatoKurulu">Senato Kurulu</a></li>
+                                    <li><a class="dropdown-item" href="/Yonetimler/YonetimKurulu">Yönetim Kurulu</a></li>
+                                    <li><a class="dropdown-item" href="/Yonetimler/GenelSekreter">Genel Sekreter</a></li>
+                                    <li><a class="dropdown-item" href="https://cdn.duzce.edu.tr/File/GetFile/03869186-84f4-4f6d-81e0-cbcc4412b10c" target="_blank">Senato ve Yönetim Kurulu Kararlarımız</a></li>
+                                    <li><a class="dropdown-item" href="http://kurulkararlari.duzce.edu.tr/Main/Goruntule" target="_blank">Teşkilat Şeması</a></li>
+                                    <li><a class="dropdown-item" href="/Yonetimler/KurucuRektorumuz">Kurucu Rektörümüz</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Sayılarla DÜ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/OgrenciSayilari/Index">Ögrenci Sayıları</a></li>
+                                    <li><a class="dropdown-item" href="/PersonelSayilari/Index">Personel Sayıları</a></li>
+                                    <li><a class="dropdown-item" href="/BolumveProgramSayilari/Index">Bölüm ve Program Sayıları</a></li>
+                                    <li><a class="dropdown-item" href="/SayilarDU/ProjeSayilari">Proje Sayıları</a></li>
+                                    <li><a class="dropdown-item" href="/SayilarDU/FikriMulkiyet">Fikri Mülkiyet</a></li>
+                                    <li><a class="dropdown-item" href="/UniversiteIzlemeveDgrRapor/Index">Üniversite İzleme ve Değerlendirme Raporu</a></li>
+                                    <li><a class="dropdown-item" href="/ButceBilgileri/Index">Bütçe</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Sıralamalar</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/Siralamalar/URAP">URAP</a></li>
+                                    <li><a class="dropdown-item" href="/Siralamalar/THE">THE</a></li>
+                                    <li><a class="dropdown-item" href="/Siralamalar/GirisimcilikEndeksi">Girişimcilik Endeksi</a></li>
+                                    <li><a class="dropdown-item" href="/Siralamalar/GreenMetric">Green Metric</a></li>
+                                    <li><a class="dropdown-item" href="/Siralamalar/InnovaLig">İnnovaLig</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/Ilkler/Index" class="dropdown-item">İlkler</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Kurumsal Strateji</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/StratejikPlanRaporlari/Index">Stratejik Plan Raporları</a></li>
+                                    <li><a class="dropdown-item" href="/KurumsalStrateji/KalitePolitikamiz">Kalite Politikamız</a></li>
+                                    <li><a class="dropdown-item" href="/KurumsalStrateji/SurdurulebilirlikRaporu">Sürdürülebilirlik Raporu</a></li>
+                                    <li><a class="dropdown-item" href="/KurumIcDegerlendirmeRaporlari/Index">Kurum İç Değerlendirme Raporları</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Kampüs Yaşamı</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/KampüsYasami/BeslenmeHizmetleri">Beslenme Hizmetleri</a></li>
+                                    <li><a class="dropdown-item" href="/KampüsYasami/SporHizmetleriBirimi">Spor Hizmetleri Birimi</a></li>
+                                    <li><a class="dropdown-item" href="/KampüsYasami/Ulasim">Ulaşım</a></li>
+                                    <li><a class="dropdown-item" href="/KampüsYasami/Barinma">Barınma</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/Isbirlikleri/Index" class="dropdown-item">İşbirlikleri</a>
+                            </li>
+                            <li>
+                                <a href="/FotografGalerisi/Index" class="dropdown-item">Tanıtım Filmleri/Fotoğraf Galerisi</a>
+                            </li>
+                            <li>
+                                <a href="/YonetmelikVeYonergeler/Index" class="dropdown-item">Yönetmelik ve Yönergeler</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Akademik</a>
+
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Fakülteler</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        @await Component.InvokeAsync("FakulteleriListele")
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Enstitüler</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        @await Component.InvokeAsync("EnstituleriListele")
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Yüksekokullar</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#" class="dropdown-item">Akçakoca Turizm İşl. ve O.Y.O.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Hakime ERCİYAS Yabancı Diller Yüksekokulu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Meslek Yüksekokulları</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#" class="dropdown-item">Akçakoca MYO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Çilimli MYO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Düzce MYO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Dr. Engin PAK Cumayeri MYO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Gölyaka MYO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Kaynaşlı MYO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Ormancılık MYO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Sağlık Hizmetleri MYO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Sosyal Bilimler MYO</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Kurullar</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Bölüm Başkanlıkları</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#" class="dropdown-item">Atatürk İlkeleri ve İnkılap Tarihi Bölümü</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">Türk Dili</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Araştırma</a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#" class="dropdown-item">Araştırma Merkezleri</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Laboratuvar Envanteri</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Yayınlar Projeler</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Hakemli Dergiler</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Teknoloji Transfer Ofisi</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">İhtisaslaşma</a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#" class="dropdown-item">Program Kapsamı</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Tıbbi Bitki Yetiştiriciliği</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Ürünler/Markalar</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Üretim Merkezi</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Geleneksel ve Tamamlayıcı Tıp Faaliyetleri</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Tarımsal Atıkların Geri Kazanımı Faaliyetleri</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Arıcılık / Arı Ürünleri</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Bilimsel Yayınlar</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">İşbirlikleri</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Etkinlikler</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <a href="" class="nav-item nav-link">DüYayınlar</a>
+                    <a href="" class="nav-item nav-link">DÜDuyurular</a>
+                    <li>
+                        <a href="/Admin" class="nav-item nav-link" style=" text-decoration: none;">Yönetici Paneli</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+        <!-- Nav Bar Bitti -->
+    </header>
+
+    <section class="breadcrumb-panel">
+        <div class="flex container-fluid ustwrapper">
+            <nav class="dn">
+                <div class="breadcrumb-title">@fakulte.FakulteAdi</div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/" class="icerikilk">Anasayfa</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        Akademik
+                    </li>
+                    <li class="breadcrumb-item">
+                        Fakülte
+                    </li>
+                    <li class="breadcrumb-item active">
+                        @fakulte.FakulteAdi
+                    </li>
+                </ol>
+            </nav>
+            <div class="input-group dv">
+                <i class="fa fa-search"></i>
+                <input type="text" value="" placeholder="Arama">
+            </div>
+            <div class="logo-container dn">
+                <img src="~/img/du-logo.png">
+            </div>
+        </div>
+    </section>
+
+    <main role="main" class="pb-3" style="min-height:780px;">
+        <div id="wrapper">
+            <!-- Sidebar-wrapper -->
+            <div id="sidebar-wrapper">
+                <div class="side-top">
+                    <ul class="sidebar-nav w3-bar-block">
+
+                      
+                        <li>
+                            <a href="/Fakulteler/@fakulte.FakulteAdi.Replace(" ", "-")/@fakulte.ID">Genel Bilgiler</a>
+                        </li>
+                        <li class="w3-dropdown-hover">
+
+                            <a id="menulerigetir">Yönetim <i class="fa fa-caret-down"></i> </a>
+                            <ul class="w3-dropdown-content w3-bar-block">
+                                <li id="bosluksilmekicin">
+                                    <a asp-action="YonetimdekiKisiler" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Yönetim</a>
+
+                                </li>
+                                <li id="bosluksilmekicin">
+                                    <a asp-action="BolumVeAnabilimDaliBaskanliklari" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Bölüm ve Anabilim Dalı Başkanlıkları</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="w3-dropdown-hover">
+                            <a id="menulerigetir">Personel <i class="fa fa-caret-down"></i> </a>
+                            <ul class="w3-dropdown-content w3-bar-block">
+                                <li id="bosluksilmekicin">
+                                    <a asp-action="AkademikPersoneller" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Akademik</a>
+                                </li>
+                                <li id="bosluksilmekicin">
+                                    <a asp-action="IdariPersoneller" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">İdari</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w3-dropdown-hover">
+                            <a id="menulerigetir">Bölümler <i class="fa fa-caret-down"></i> </a>
+                            <ul class="w3-dropdown-content w3-bar-block">
+                                <li id="bolumlerinlistesi">
+                                    @await Component.InvokeAsync("FakulteBolumleriListele", new { fakulteid = fakulte.ID })
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w3-dropdown-hover">
+                            <a id="menulerigetir">Öğrenci <i class="fa fa-caret-down"></i> </a>
+                            <ul class="w3-dropdown-content w3-bar-block">
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="Formlar" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Formlar</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="LisansDersProgrami" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Lisans Ders Programları</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="LisansustuDersProgrami" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Lisansüstü Ders Programları</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a href="http://asbf.duzce.edu.tr/Dokumanlar/asbf/Dosyalar/be4b81ef-ef12-4f13-97ce-af6677b6f355.pdf" target="_blank">Özel Gereksinimli Öğrencilerimiz</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a href="/YonetmelikVeYonergeler/Index" target="_blank">Mevzuat</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="OgrenciDanisman" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Öğrenci Danışmanlığı</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w3-dropdown-hover">
+                            <a id="menulerigetir">Kurumsal <i class="fa fa-caret-down"></i> </a>
+                            <ul class="w3-dropdown-content w3-bar-block">
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="OrganizasyonSemasi" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Organizasyon Şeması</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="GorevTanimlari" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Görev Tanımları</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="FaliyetRaporlari" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Faaliyet Raporları</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="IcDegerlendirmeRaporu" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">İç Değerlendirme Raporu</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="KurullarVeKomisyonlar" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Kurullar ve Komisyonlar</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="HizmetStandartlariveEnvanteri" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Hizmet Standartları ve Envanteri</a>
+                                </li>
+                                <li id="bolumlerinlistesi">
+                                    <a asp-action="IsAkisSemalari" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">İş Akış Şemaları</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a asp-action="AkademikCalismalar" asp-controller="FakulteBilgileri" asp-route-id="@fakulte.ID">Akademik Çalışmalar</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sidebar-wrapper Bitti-->
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <a href="#menu-toggle" class="menuopener" id="menu-toggle"><i class="fa fa-bars"></i></a>
+                <div class="section wb">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-11 col-md-offset-2">
+                                <div class="message-box">
+
+                                    @RenderBody()
+                                    @*<h4>About</h4>
+                                        <h2>Welcome to SMBarber</h2>
+                                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
+
+                                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vitae rutrum neque. Ut id erat sit amet libero bibendum aliquam. Donec ac egestas libero, eu bibendum risus. Phasellus et congue justo. </p>
+
+                                        <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!--<footer>
+        <div class="wrapper flex container">
+            <div class="c-3 contact">
+                <p>ANA KAMPÜS</p>
+                <p>Düzce Üniversitesi Konuralp Yerleşkesi Yörük Mah. Merkez/DÜZCE, 81620</p>
+                <p>TEL : 0850 800 81 81 </p>
+                <p>FAKS: 0380 542 11 03</p>
+            </div>
+            <div class="c-3">
+                <div class="input-group">
+                    <i class="fa fa-search"></i>
+                    <input type="text" value="" placeholder="Arama" />
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-whatsapp"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="c-3 footer-image dn">-->
+                @*<img src="footer.png"  />*@
+            <!--</div>
+        </div>
+        <div class="copyright">
+            © Copyright --->
+            @*<a href="#">Düzce Üniversitesi</a>*@
+            <!--<a href="">Ali SARI</a>
+            - 2021
+        </div>
+    </footer>-->
+
+    <!-- JavaScript Libraries -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/lib/counterup/counterup.min.js"></script>
+
+    <script src="~/mail/jqBootstrapValidation.min.js"></script>
+    <script src="~/mail/contact.js"></script>
+
+    <script src="~/js/all.js"></script>
+
+    <script src="~/js/responsive-tabs.js"></script>
+    <script src="~/js/custom.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        (function ($) {
+            "use strict";
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+            smoothScroll.init({
+                selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+                selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+                speed: 500, // Integer. How fast to complete the scroll in milliseconds
+                easing: 'easeInOutCubic', // Easing pattern to use
+                offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+                callback: function (anchor, toggle) { } // Function to run after scrolling
+            });
+        })(jQuery);
+    </script>
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 0) {
+                $('.navbar').addClass('nav-sticky');
+            } else {
+                $('.navbar').removeClass('nav-sticky');
+            }
+        });
+        $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+            if (!$(this).next().hasClass('show')) {
+                $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+            }
+            var $subMenu = $(this).next('.dropdown-menu');
+            $subMenu.toggleClass('show');
+
+
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+                $('.dropdown-submenu .show').removeClass('show');
+            });
+
+
+            return false;
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

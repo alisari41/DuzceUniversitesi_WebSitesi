@@ -1,0 +1,58 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim>
+
+@{
+
+    var fakulte = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Fakulte)ViewBag.Fakulteler;
+    var yonetimler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Yonetim)ViewBag.Yonetimler;
+}
+<html>
+<head>
+
+</head>
+<body>
+
+    <h2 id="genelbilgilerbaslik1">Bölüm ve Anabilim Dalı Başkanlıkları</h2>
+    <br />
+
+    <div class="table-responsive">
+        <table class="table table-hover table-sm table-bordered" id="bolumveanabilimfakulte">
+            <thead>
+
+                <tr>
+                    <td colspan="4" height="20"><strong>Bölüm ve Anabilim Dalı Başkanlıkları</strong></td>
+                </tr>
+
+            </thead>
+
+            @{
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td style="width:380px">
+                                @Html.DisplayFor(modelItem => item.Bolum.BolumAdi)
+                            </td>
+                            <td style="width:380px">
+                                @Html.DisplayFor(modelItem => item.BolumDali)
+                            </td>
+                            <td style="width:134px">
+                                @Html.DisplayFor(modelItem => item.BolumGorevi)
+                            </td>
+                            <td style="width:247px">
+                                <a asp-action="YonetimdekiKisilerDetay" asp-route-id="@item.ID" asp-route-fakulteid="@fakulte.ID" class="">@item.Unvan @item.Ad @item.Soyad</a>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            }
+        </table>
+
+    </div>
+    <br />
+
+
+</body>
+</html>

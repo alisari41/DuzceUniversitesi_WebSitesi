@@ -1,0 +1,26 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@* Kendi oluşturdup-ğum TagHelper *@
+@{
+    var enstitu = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Enstitu)ViewBag.Enstituler;
+    var bolumler = (_162120012_AliSARI_DuzceUniversitesi_WebSitesi.Models.Bolum)ViewBag.Bolumler;
+}
+@* burasıı fakultelerin genel bilgileri sayfası  *@
+<html>
+<head>
+
+</head>
+<body>
+
+    <h2 id="genelbilgilerbaslik1"> Formlar</h2>
+    <p>
+        <a asp-action="YuksekLisansFormlari" asp-controller="EnstituBilgileri" asp-route-id="@enstitu.ID" target="_blank" id="butcelink">Yüksek Lisans Formları</a>
+    </p>
+    <p>
+        <a asp-action="DoktoraFormlari" asp-controller="EnstituBilgileri" asp-route-id="@enstitu.ID" target="_blank" id="butcelink">Doktora Formları</a>
+    </p>
+
+
+
+
+</body>
+</html>
