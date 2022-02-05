@@ -27,7 +27,7 @@ namespace _162120012_AliSARI_DuzceUniversitesi_WebSitesi.Controllers
             return View(model);
         }
         public async Task<IActionResult> Duyurular()
-        {
+        {//Duyurular tutuluyor
             var andDB = _context.Duyurulars.Where(x => x.AktifMi == true).OrderByDescending(y => y.Tarih);// Duyuru hala aktif mi diye sorguladım ve en yakın Tarihine göre sıraladım.
             return View(await andDB.ToListAsync());
         }
