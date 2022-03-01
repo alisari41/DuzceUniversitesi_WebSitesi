@@ -1,7 +1,7 @@
 
 # Üniversite Web Sayfası
 
-Asp.Net Core Mvc projesidir. Üniversite sayfası uygulamasıdır. Uygulama dinamiktir ve responsivedir. Fakülteler, Enstitüler mevcuttur. Uygulamada kullanılan teknikler rapor'da gösterilmiştir. Rapordaki tüm çizimler bana aittir. Çizimler Visio üzerinden yapılmıştır. Onlarda paylaşılmıştır.
+Asp.Net Core Mvc projesidir. Üniversite sayfası uygulamasıdır. Uygulama dinamiktir ve responsivedir. Fakülteler, Enstitüler mevcuttur. Uygulamada kullanılan teknikler rapor'da gösterilmiştir. Rapordaki tüm çizimler bana aittir. Çizimler Visio üzerinden yapılmıştır. Onlarda paylaşılmıştır. Issues kısmından bakabilirsiniz.
 
 
 
